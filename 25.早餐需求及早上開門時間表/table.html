@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.早餐需求及早上開門時間表table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body></body>
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["12"], ["南和假期旅行社股份有限公司"], "company-name");
+  generateInnerHTML(["12"], ["需求及早上開門時間表"], "table-name");
+  generateInnerHTML(["8",'4'], ["團體名稱：高雄市鳳山區文德國民小學",'單　　號：202311210001'], "text-xl");
+  generateInnerHTML(["8",'4'], ["活動名稱：112學年度六年級畢業班戶外教育活動",'印 表 人：涂芸茜'], "text-xl");
+  generateInnerHTML(["12"], ["開團日期：2023/11/22"], "text-xl");
+  generateInnerHTML(["8",'3','2'], ["產品名稱",'領用數量','單位'], "border text-center text-2xl");
+  generateInnerHTML(["8",'3','2'], ["早餐-葷",'0.0','份'], "border text-center text-2xl bold");
+  generateInnerHTML(["12"], ["頭車時間：05:50 KAA-6923高雄南"], "text-2xl bold");
+  generateInnerHTML(["12"], ["預估車數：9"], "text-2xl bold");
+  generateInnerHTML(["12"], ["車輛：1.KAA-6923　2.林笠佑　柚子　4.0925-339811"], "text-2xl bold");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], ["領隊：1.林佑慶　2.小林　0938768835..07-3741373"], "text-2xl bold");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], ["業務：　　　　領料人員：　　　　繳回人員：　　　　倉管　領料簽收：　　繳回簽收：　　"], "");
+  
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(16, "L", "");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight,
+    );
+  }, 500);
+</script>

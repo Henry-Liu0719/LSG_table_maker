@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>22.車輛安全檢核項目表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+        size: A4 landscape;
+        margin: 0;
+        } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+        min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+        height: 768px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      height: 100%;
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="12">車輛安全檢核項目表</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="4" style="vertical-align: top">
+            車<br />輛<br />基<br />本<br />資<br />料
+          </td>
+          <td class="border text-center" colspan="3">車號</td>
+          <td class="border" colspan="3"></td>
+          <td class="border text-center" colspan="2">出廠年份</td>
+          <td class="border" colspan="3">___年___月</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">合格定檢紀錄</td>
+          <td class="border" colspan="3">☐車輛無逾期檢驗</td>
+          <td class="border text-center" colspan="2">下次定檢日期</td>
+          <td class="border" colspan="3">___年___月___日</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">強制汽車責任保險證號</td>
+          <td class="border" colspan="3"></td>
+          <td class="border text-center" colspan="2">有效期限</td>
+          <td class="border" colspan="3">___年___月___日</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">乘客責任險證號</td>
+          <td class="border" colspan="3"></td>
+          <td class="border text-center" colspan="2">有效期限</td>
+          <td class="border" colspan="3">___年___月___日</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="3" style="vertical-align: top">
+            駕<br />駛<br />人<br />資<br />料
+          </td>
+          <td class="border text-center" colspan="3">駕駛人姓名</td>
+          <td class="border" colspan="3"></td>
+          <td class="border text-center" colspan="2">駕照號碼</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="11" rowspan="2">
+            ☐一年內無重大違規或重大肇事紀錄<br />(係指無違反道路交通管理處罰條例相關規定被吊扣駕照紀錄之情事)
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="7" style="vertical-align: top">
+            車<br />輛<br />安<br />全<br />資<br />料
+          </td>
+          <td class="border text-center" colspan="3">安全門</td>
+          <td class="border" colspan="8">
+            ☐可徒手開啟　　☐標示及使用說明清楚
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">安全門通道</td>
+          <td class="border" colspan="8">
+            ☐無座椅、無蓋板　　☐保持暢通，無堆放物品
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">滅火器</td>
+          <td class="border" colspan="8">
+            ☐至少２具，前後各一具　　☐有效期限：___年___月___日
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">車窗擊破器</td>
+          <td class="border" colspan="8">
+            ☐至少３具，位置明顯　　☐標示清楚，可徒手取用
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">駕駛室上方最前方座椅</td>
+          <td class="border" colspan="8">
+            ☐距擋風玻璃７０公分以上　　☐設有欄杆或保護板
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">行李箱</td>
+          <td class="border" colspan="8">☐未設置座椅或臥鋪</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">輪胎胎紋</td>
+          <td class="border" colspan="8">
+            ☐未磨損至任一胎面磨耗指示點　　☐膠皮無脫落
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="7" style="vertical-align: top">
+            車<br />輛<br />安<br />全<br />及<br />輔<br />助<br />系<br />統
+          </td>
+          <td class="border text-center" colspan="3">底盤(必要項目)</td>
+          <td class="border" colspan="8">
+            須使用可適性打造遊覽車之底盤所打造之遊覽車
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3" rowspan="2">
+            車輛裝置<br />先進駕駛輔助系統<br />(至少一種)
+          </td>
+          <td class="border" colspan="8" rowspan="2">
+            ☐車道防偏移警示系統LDWS<br />☐車前防撞警示系統FCWS 或
+            緊急煞車輔助系統AEBS<br />☐疲勞偵測系統DSM
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td class="border text-center" colspan="3" rowspan="2">
+            車輛裝置<br />行車視野輔助系統<br />(至少一種)
+          </td>
+          <td class="border" colspan="8" rowspan="2">
+            ☐合於車輛安全檢測基準規定之行車視野輔助系統<br />☐左右兩側視野鏡頭及可顯示車身兩側影像之車內螢幕<br />☐於車輛右側裝設一個外部近側視鏡，並於車輛右前側裝設雷達<br />　警示系統<br />☐可顯示車輛四周影像之環景顯示系統
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td class="border" colspan="11" rowspan="2">
+            車輛裝置具有全球衛星定位功能系統設備(GPS)　並可提供車輛動態資訊介接至公路主管機關遊覽車動態資訊管理系統。☐有提供☐系統連接☐帳號☐密碼
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="border border-bottom-none" colspan="6">
+            得標廠商代表簽章
+          </td>
+          <td class="border border-bottom-none" colspan="6">
+            車輛駕駛人於出發當日簽章
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-top-none" colspan="6"></td>
+          <td class="border border-top-none text-right" colspan="6">
+            檢查日期：　　年　　月　　日
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            備註:<br />　1.　本表係依學校辦理校外教學活動租用車輛應行注意事項訂定。<br />　2.　一車一表。出車前務請依本表檢查、填具。<br />　3.　得標廠商原則上於校外教學活動出發前三日，填妥本表各欄位並簽章後提供予學校。<br />　4.　車輛駕駛人於校外教學活動出發前檢查合格後，於本表簽章。<br />　5.　得標廠商所提供之備援車輛及駕駛人亦需填列本表。
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

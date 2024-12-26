@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>25.早餐需求及早上開門時間表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      /* @page {
+    size: A4;
+    margin: 0;
+  } */
+      /* 橫向A4 */
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      /* min-width:768px;
+  min-height: 1024px; */
+      /* 橫向A4 */
+      min-width: 1024px;
+      min-height: 768px;
+    }
+
+    .container {
+      /* 直向A4 */
+      /* width:768px;
+  height: 1024px; */
+      /* 橫向A4 */
+      width: 1024px;
+      height: 768px;
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      /* height: 100%;  */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="12">
+            南和假期旅行社股份有限公司
+          </td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="12">需求及早上開門時間表</td>
+        </tr>
+        <tr>
+          <td class="text-xl" colspan="9">
+            團體名稱：高雄市鳳山區文德國民小學
+          </td>
+          <td class="text-xl" colspan="3">單　　號：202311210001</td>
+        </tr>
+        <tr>
+          <td class="text-xl" colspan="9">
+            活動名稱：112學年度六年級畢業班戶外教育活動
+          </td>
+          <td class="text-xl" colspan="3">印 表 人：涂芸茜</td>
+        </tr>
+        <tr>
+          <td class="text-xl" colspan="12">開團日期：2023/11/22</td>
+        </tr>
+        <tr class="h-50">
+          <td class="border text-center text-2xl" colspan="9">產品名稱</td>
+          <td class="border text-center text-2xl" colspan="2">領用數量</td>
+          <td class="border text-center text-2xl" colspan="1">單位</td>
+        </tr>
+        <tr class="h-50">
+          <td class="border text-center text-2xl bold" colspan="9">
+            早餐-葷
+          </td>
+          <td class="border text-right text-2xl bold" colspan="2">0.0</td>
+          <td class="border text-center text-2xl bold" colspan="1">份</td>
+        </tr>
+        <tr>
+          <td class="text-2xl bold" colspan="12">
+            頭車時間：05:50 KAA-6923高雄南
+          </td>
+        </tr>
+        <tr>
+          <td class="text-2xl bold" colspan="12">預估車數：9</td>
+        </tr>
+        <tr>
+          <td class="text-2xl bold" colspan="12">
+            車輛：1. KAA-6923　2. 林笠佑　3. 柚子　4. 0925-339811
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="text-2xl bold" colspan="12">
+            領隊：1. 林佑慶　2. 小林　3. 0938768835..07-3741373
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            業務：　　　　領料人員：　　　　繳回人員：　　　　倉管　領料簽收：　　繳回簽收：　　
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

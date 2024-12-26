@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>行程規劃 7.團體預約單table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["富甲旅行社有限公司"], "company-name");
+  generateInnerHTML(["24"], ["團體預約單"], "table-name");
+  generateInnerHTML(["24"], ["團號：202310171080"], "", "");
+  generateInnerHTML(["4", "20"], ["團體名稱", "慈惠醫專"], "border", "");
+  generateInnerHTML(
+    ["4", "20"],
+    ["園區電話", "TEL:02-249-58531"],
+    "border border-bottom-none",
+    "",
+  );
+  generateInnerHTML(["4", "20"], ["", "FAX:"], "border border-top-none", "");
+  generateInnerHTML(["4", "20"], ["預約日期", "2023/11/16"], "border", "");
+  generateInnerHTML(["24"], ["入園時間："], "", "border border-bottom-none");
+  generateInnerHTML(
+    ["24"],
+    [""],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    ["領隊："],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    [""],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    ["電話："],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    [""],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    ["車輛及領隊數："],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    [""],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    ["老師用餐："],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(
+    ["24"],
+    [""],
+    "",
+    "border border-bottom-none border-top-none",
+  );
+  generateInnerHTML(["24"], ["需求明細"], "", "border text-center");
+  generateInnerHTML(
+    ["12", "4", "4", "4"],
+    ["產品名稱", "餐別", "數量", "單位（桌）"],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["12-4", "4-4", "4-4", "4-4"],
+    ["停車費", "", "4", ""],
+    "border align-top",
+    "",
+  );
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(["4-6", "20-6"], ["備　　註", ""], "border align-top", "");
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(["24"], ["聯絡人：涂芸茜"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(
+    ["24"],
+    ["TEL：07-9700983　FAX：07-9725885　分機： "],
+    "",
+    "",
+  );
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "", "border");
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `;
+    } else {
+      str += `<tr>
+    `;
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight,
+    );
+  }, 500);
+</script>

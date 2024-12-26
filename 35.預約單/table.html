@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>35.預約單table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["南和假期旅行社股份有限公司"], "company-name");
+  generateInnerHTML(["24"], ["統一編號 82836632"], "text-center");
+  generateInnerHTML(["24"], ["園區預約單"], "text-center");
+  generateInnerHTML(
+    ["16", "8"],
+    ["團號：202305180", "預約日期：2023/11/27"],
+    "text-right",
+  );
+  generateInnerHTML(["3", "21"], ["預約地點", "六福開發(股)公司"], "border");
+  generateInnerHTML(
+    ["3", "6", "3", "4", "4", "4"],
+    ["電話", "", "傳真", "", "聯絡人", ""],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["3", "6", "3", "4", "4", "4"],
+    ["消費日期", "", "用餐時間", "", "餐別", ""],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["3", "13", "4", "4"],
+    ["團體名稱", "高雄市立鹽埕國中", "預計入園車台數", ""],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["16", "4", "4"],
+    ["需求明細", "領隊人數", ""],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["5", "11", "4", "4"],
+    ["產品名稱", "菜單明細", "數量", "單位(桌)"],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["5", "11", "4", "4"],
+    ["停車費", "", "5", ""],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["5", "11", "4", "4"],
+    ["國高中/大專學生團體票(畢旅,戶外教學)", "", "168", ""],
+    "border text-center",
+  );
+  generateInnerHTML(["5", "19"], ["領隊", ""], "border text-center");
+  generateInnerHTML(
+    ["5-4", "19-4"],
+    ["備註", ""],
+    "border align-bottom text-center",
+  );
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(
+    ["5", "19"],
+    ["預約人：黃姵瑩", "請確認後簽章回傳，謝謝。"],
+    "text-right",
+  );
+  generateInnerHTML(["24"], ["電話：07-2515000"], "");
+  generateInnerHTML(["24"], ["傳真：07-9729555"], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  generateInnerHTML(["24"], [""], "");
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 3000,
+    );
+  }, 500);
+</script>

@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>收支明細表(區域)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+  min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+  height: 768px; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      /* height: 100%;  */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 90%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .align-top {
+      vertical-align: top;
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .bg-grey {
+      background-color: #f0f0f0;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .p-0 {
+      padding: 0;
+    }
+
+    .number {
+      font-family: 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .zh {
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="10">富甲旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="10">收支明細表(區域)</td>
+        </tr>
+        <tr>
+          <td colspan="7"></td>
+          <td colspan="3">Page 1 of 3</td>
+        </tr>
+        <tr>
+          <td colspan="7">團號：</td>
+          <td colspan="3">業務：</td>
+        </tr>
+        <tr>
+          <td colspan="7">團名：</td>
+          <td colspan="3">ＯＰ：</td>
+        </tr>
+        <tr>
+          <td colspan="7">活動名稱：</td>
+          <td colspan="3">車台數：</td>
+        </tr>
+        <tr>
+          <td colspan="7">出團日期：</td>
+          <td colspan="3">出團人數：</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">收入<br>(1)</td>
+          <td class="border" colspan="1">代轉費<br>(2)</td>
+          <td class="border" colspan="1">車資<br>(3)</td>
+          <td class="border" colspan="1">油資<br>(4)</td>
+          <td class="border" colspan="1">路費<br>(5)</td>
+          <td class="border" colspan="1">小費<br>(6)</td>
+          <td class="border" colspan="1">車稅金<br>(7)</td>
+          <td class="border" colspan="1">保險費<br>(8)</td>
+          <td class="border" colspan="1">住宿費<br>(9)</td>
+          <td class="border" colspan="1">餐費<br>(10)</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="2">門/機/車票<br>(11)</td>
+          <td class="border" colspan="1">領隊費<br>(12)</td>
+          <td class="border" colspan="1">物料<br>(13)</td>
+          <td class="border" colspan="1">交際費<br>(14)</td>
+          <td class="border" colspan="1">費用<br>(15)</td>
+          <td class="border" colspan="2">總支出<br>(17)</td>
+          <td class="border" colspan="2">毛利<br>(18)</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10"></td>
+        </tr>
+        <tr>
+          <td colspan="10">收款明細</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="2">收款項目</td>
+          <td class="border" colspan="5">說明</td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="1">小計</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2">**</td>
+          <td class="border text-center" colspan="5">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2">**</td>
+          <td class="border text-center" colspan="5">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr>
+          <td class="text-right align-top" colspan="8">總計(1)：</td>
+          <td class="border text-right number" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">代轉手續費：(2)</td>
+        </tr>
+        <tr>
+          <td colspan="10">車資明細表</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="2">車號</td>
+          <td class="border" colspan="2">F1車資 </td>
+          <td class="border" colspan="1">油資</td>
+          <td class="border" colspan="1">路費</td>
+          <td class="border" colspan="1">小費</td>
+          <td class="border" colspan="1">稅金</td>
+          <td class="border" colspan="2">小計 </td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="2" rowspan="3">510-v9</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="2" rowspan="3">365-v9</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="1" rowspan="3">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="text-right align-top" colspan="8" rowspan="3">總計(3)~(7)</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">保險費用明細</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">日期</td>
+          <td class="border" colspan="2">保險公司 </td>
+          <td class="border" colspan="3">產品名稱 </td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="2">小計 </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">11/15</td>
+          <td class="border text-center" colspan="2" rowspan="2">旺旺友聯產物保險</td>
+          <td class="border text-center" colspan="3" rowspan="2">意外250萬+醫療20萬-(新制/三天)</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="2">0,000 </td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">11/15</td>
+          <td class="border text-center" colspan="2" rowspan="2">旺旺友聯產物保險</td>
+          <td class="border text-center" colspan="3" rowspan="2">意外250萬+醫療20萬-(新制/三天)</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="2">0,000 </td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="align-top" colspan="8" rowspan="2">總計(8)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">住宿明細表</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">日期</td>
+          <td class="border" colspan="1">地點</td>
+          <td class="border" colspan="2">產品名稱 </td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="1">稅金</td>
+          <td class="border" colspan="1">退佣</td>
+          <td class="border" colspan="1">補司機</td>
+          <td class="border" colspan="1">小計</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="2" rowspan="2">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="2" rowspan="2">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="align-top" colspan="8" rowspan="2">成本(9)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">用餐明細表</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">日期</td>
+          <td class="border" colspan="1">地點</td>
+          <td class="border" colspan="2">產品名稱 </td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="1">稅金</td>
+          <td class="border" colspan="1">退佣</td>
+          <td class="border" colspan="1">補司機</td>
+          <td class="border" colspan="1">小計</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="2" rowspan="2">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="2" rowspan="2">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="align-top" colspan="8" rowspan="2">成本(10)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">門/機/車明細表</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">日期</td>
+          <td class="border" colspan="1">地點</td>
+          <td class="border" colspan="2">產品名稱 </td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="1">稅金</td>
+          <td class="border" colspan="1">退佣</td>
+          <td class="border" colspan="1">補司機</td>
+          <td class="border" colspan="1">小計</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="2" rowspan="2">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="1" rowspan="2">**</td>
+          <td class="border text-center" colspan="2" rowspan="2">**</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1" rowspan="2">0,000</td>
+          <td class="border text-right number" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="align-top" colspan="8" rowspan="2">成本(11)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">領隊費用明細表</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">姓名</td>
+          <td class="border" colspan="2">領隊費 </td>
+          <td class="border" colspan="2">主導費 </td>
+          <td class="border" colspan="1">副導費</td>
+          <td class="border" colspan="1">早餐</td>
+          <td class="border" colspan="1">誤餐費</td>
+          <td class="border" colspan="2">小計 </td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="2">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="zh align-top" colspan="8">總計(13)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">物料領用明細</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">領料日期</td>
+          <td class="border" colspan="2">料號</td>
+          <td class="border" colspan="3">品名</td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="2">小計 </td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="zh align-top" colspan="8">總計(13)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">交際費明細</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">日期</td>
+          <td class="border" colspan="2">費用類別</td>
+          <td class="border" colspan="3">費用說明</td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="2">小計 </td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="zh align-top" colspan="8">總計(14)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr>
+          <td colspan="10">費用明細</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="1">日期</td>
+          <td class="border" colspan="2">費用類別</td>
+          <td class="border" colspan="3">費用說明</td>
+          <td class="border" colspan="1">單價</td>
+          <td class="border" colspan="1">數量</td>
+          <td class="border" colspan="2">小計 </td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right number">
+          <td class="border text-center zh" colspan="1">**</td>
+          <td class="border" colspan="2">0,000</td>
+          <td class="border" colspan="3">0,000 </td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="1">0,000</td>
+          <td class="border" colspan="2">0,000</td>
+        </tr>
+        <tr class="text-right">
+          <td class="zh align-top" colspan="8">總計(15)：</td>
+          <td class="border number" colspan="2">0,000</td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td colspan="10">總經理：　　　　　會計主管：　　　　　會計：　　　　　出納：　　　　　製單：　　　　　</td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

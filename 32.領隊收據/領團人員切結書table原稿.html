@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>領團人員切結書table原稿</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style></style>
+</head>
+
+<body></body>
+
+</html>
+<script>
+  // ☐ ◯
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `
+
+  generateInnerHTML(['24'], ['領團人員切結書'], '', 'company-name')
+  str += `<tr></tr>`
+  generateInnerHTML(['24'], ['本人　<span class="underline-offset-1">林冠宇</span>　擔任南和環球旅行社股份有限公司領隊，於執行業務其間自應謹言慎行 、嚴守分際，恪遵公司規定。若個人之行為導致違背社會善良風俗或違反中華民國法律之情事，本人願意放棄抗訴權，承擔所有法律追訴；並對影響南和環球旅行社股份有限公司及其客戶之名譽、財產之損害，並依法負擔民事、刑事全數賠償責任。'], '', '')
+  str += `<tr></tr>`
+  generateInnerHTML(['24'], ['規範條列內容：'], '', '')
+  str += `<tr></tr>`
+  generateInnerHTML(['24'], ['第一條： 出團期間嚴禁以非法形式盜攝，偷拍他人，侵犯個人隱私，經查屬實， 依循法律途徑送辦處理。'], '', '')
+  generateInnerHTML(['24'], ['第二條： 有鑑於電子通訊日漸發達，為維護領團人員及客戶人身財產隱私，出團前中後嚴禁雙方互留各式聯絡通訊方式之資訊資料，例如：Line、FB、IG、推特、手機 號碼、SKYPE.....等社群聯絡帳號，違者視情節進行相關處分；情節重大者依循法律途徑送辦處理。'], '', '')
+  generateInnerHTML(['24'], ['謹立此據以茲證明。'], '', 'text-right')
+  generateInnerHTML(['12', '12'], ['立書人簽章：', '聯絡電話：'], '', '')
+  str += `<tr></tr>`
+  generateInnerHTML(['24'], ['中華民國　　年　　　月　　　日'], '', 'text-center')
+  str += `
+        </table>
+    </div>
+  </div>
+  `
+  console.log([str])
+  document.querySelector('body').innerHTML = str
+  // generateFunctions(24, 'X', '', '')
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `
+    } else {
+      str += `<tr>
+    `
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+          `
+          return
+        }
+        str += `<td colspan="${item}">${text[index]}</td>
+    `
+      })
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `
+          return
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `
+      })
+    }
+    str += `</tr>
+  `
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `
+    }
+    // console.log([str])
+    let div = document.createElement("div")
+    div.innerHTML = str
+    document.body.appendChild(div)
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    )
+  }, 500);
+</script>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>領隊支出團結表</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      @media print {
+        /* 直向A4 */
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        /* 橫向A4 */
+        /* @page {
+          size: A4 landscape;
+          margin: 0;
+        } */
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+  font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+      }
+      .wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+        /* 直向A4 */
+        min-width:768px;
+        min-height: 1024px;
+        /* 橫向A4 */
+        /* min-width:1024px;
+        min-height: 768px; */
+      }
+      .container {
+        /* 直向A4 */
+        width:768px;
+        height: 1024px;
+        /* 橫向A4 */
+        /* width: 1024px;
+        height: 768px; */
+      }
+      table {
+        width: 100%;
+        /* 取消height: 100% 可固定欄高 */
+        /* height: 100%;  */
+        table-layout: fixed;
+      }
+      table * {
+        padding: 0.2rem;
+        vertical-align: middle;
+        /* border: 1px solid #000000 ; */
+      }
+      tr {
+        height: 30px;
+      }
+      .company-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      .table-name {
+        text-align: center;
+        font-size: 1.25rem;
+      }
+      .topics *{
+        padding: 0rem;
+      }
+      .textarea_input {
+        height: 95%;
+        width: 95%;
+        overflow-y: hidden;
+        border: none;
+        font-size: 1.2rem;
+      }
+
+      /* utilities class */
+      .h-50 {
+        height: 50px;
+      }
+      .text-xs {
+        font-size: 0.75rem;
+      }
+      .text-xl {
+        font-size: 1.25rem;
+      }
+      .text-2xl {
+        font-size: 1.5rem;
+      }
+      .bold{
+        font-weight: bold;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .border {
+        border: 2px solid #000000 ;
+      }
+      .border-top-none {
+        border-top: none ;
+      }
+      .border-right-none {
+        border-right: none ;
+      }
+      .border-bottom-none {
+        border-bottom: none ;
+      }
+      .border-left-none {
+        border-left: none ;
+      }
+      .border-top {
+        border-top: 1px solid #000000 ;
+      }
+      .border-right {
+        border-right: 1px solid #000000 ;
+      }
+      .border-bottom {
+        border-bottom: 1px solid #000000 ;
+      }
+      .border-left {
+        border-left: 1px solid #000000 ;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="container">
+        <table>
+          <tr>
+            <td class="company-name" colspan="12">
+              南和國際旅行社有限公司
+            </td>
+          </tr>
+          <tr>
+            <td colspan="12"class="table-name">領隊支出交辦單</td>
+          </tr>
+          <tr>
+            <td colspan="4">團號：</td>
+            <td colspan="5">團名：</td>
+            <td colspan="3">1110413-14</td>
+          </tr>
+          <tr class="border">
+            <td colspan="6">發票抬頭：</td>
+            <td colspan="6">統編：</td>
+          </tr>
+          <tr">
+            <td colspan="12" style="padding-bottom: 0;">＊＊請詳細填明細內容(依行程日期填寫)，並將收據依順序裝訂，謝謝配合＊＊</td>
+          </tr>
+          <tr>
+            <td colspan="12" style="padding-top: 0;">PS. 如需稅外加也需要開立發票</td>
+          </tr>
+          <tr>
+            <td class="text-center bold text-xl" colspan="12">支出團結表</td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1">項目</td>
+            <td class="text-center border" colspan="1">日期</td>
+            <td class="text-center border" colspan="2">業者名稱</td>
+            <td class="text-center border" colspan="3">支出細目</td>
+            <td class="text-center border" colspan="2">已付訂金</td>
+            <td class="text-center border" colspan="2">支付金額</td>
+            <td class="text-center border" colspan="1">收據</td>
+          </tr>
+          <tr>
+            <td class="border text-center" rowspan="5" style="vertical-align: middle;">住<br>宿</td>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" rowspan="5" style="vertical-align: middle;">門<br>票</td>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" rowspan="10" style="vertical-align: middle;">膳<br>食</td>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-center border" colspan="1"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="3"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="2"></td>
+            <td class="text-center border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="text-right bold border" colspan="7">小計</td>
+            <td class="border" colspan="4"></td>
+            <td class="border" colspan="1"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="container">
+        <table>
+          <tr>
+            <td class="border text-center" colspan="1">項目</td>
+            <td class="border text-center" colspan="1">日期</td>
+            <td class="border text-center" colspan="2">業者名稱</td>
+            <td class="border text-center" colspan="3">支出細目</td>
+            <td class="border text-center" colspan="2">訂金/備註</td>
+            <td class="border text-center" colspan="2">支付金額</td>
+            <td class="border text-center" colspan="1">收據</td>
+          </tr>
+          <tr>
+            <td class="border text-center" rowspan="11" style="vertical-align: middle;">雜<br>支</td>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-right bold" colspan="7">小計</td>
+            <td class="border text-right" colspan="4"></td>
+            <td class="border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="1">項目</td>
+            <td class="border text-center" colspan="3">名稱</td>
+            <td class="border text-center" colspan="5">支出明細</td>
+            <td class="border text-center" colspan="2">支付金額</td>
+            <td class="border text-center" colspan="1">收據</td>
+          </tr>
+          <tr>
+            <td class="border text-center" rowspan="10" style="vertical-align: middle;">其<br>他</td>
+            <td class="border text-center" colspan="3">油資津貼</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3">司機小費</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3">頭車費</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3">統領費</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3">總領隊費</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3">領隊小費</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3">護士</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3">機動車/油資</td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-center" colspan="3"></td>
+            <td class="border text-center" colspan="5"></td>
+            <td class="border text-center" colspan="2"></td>
+            <td class="border text-center" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-right bold" colspan="7">小計</td>
+            <td class="border" colspan="4"></td>
+            <td class="border" colspan="1"></td>
+          </tr>
+          <tr>
+            <td class="border text-2xl h-50" colspan="4">出團現金：</td>
+            <td class="border text-2xl h-50" colspan="5">實付現金：</td>
+            <td class="border text-2xl h-50" colspan="3">餘額：</td>
+          </tr>
+          <tr>
+            <td class="border text-2xl" colspan="12">實際出團人員：共</td>
+          </tr>
+          <tr>
+            <td class="border border-right-none text-2xl" colspan="4">總領：</td>
+            <td class="border border-left-none text-2xl" colspan="8">手機：</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+      
+    <div class="wrap">
+      <div class="container">
+        <table>
+          <tr>
+      <td class="company-name" colspan="12">富甲旅行社有限公司</td>
+      </tr>
+    <tr>
+      <td class="table-name" colspan="12">司機佣金支付明細表</td>
+      </tr>
+    <tr>
+      <td colspan="12"></td>
+      </tr>
+    <tr>
+      <td colspan="6">團名</td>
+      <td colspan="6">團號</td>
+      </tr>
+    <tr>
+      <td colspan="12">活動名稱</td>
+      </tr>
+    <tr>
+      <td colspan="6">出團日期</td>
+      <td colspan="6">列印日期</td>
+      </tr>
+    <tr>
+      <td colspan="12"></td>
+      </tr>
+    <tr>
+      <td class="border text-center" colspan="3">支付項目</td>
+      <td class="border text-center" colspan="3">單價</td>
+      <td class="border text-center" colspan="3">數量</td>
+      <td class="border text-center" colspan="3">備註</td>
+      </tr>
+    <tr>
+      <td class="border" colspan="3">油資</td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      </tr>
+    <tr>
+      <td class="border" colspan="3">小費</td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      </tr>
+    <tr>
+      <td class="border" colspan="3">頭車費</td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      </tr>
+    <tr>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      </tr>
+    <tr>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      </tr>
+    <tr>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      </tr>
+    <tr>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      <td class="border" colspan="3"></td>
+      </tr>
+    <tr>
+      <td class="border text-center" colspan="4">總金額</td>
+      <td class="border text-center" colspan="4">頭車司機簽名</td>
+      <td class="border text-center" colspan="4">以上金額確認無誤</td>
+      </tr>
+    <tr>
+      <td class="border text-center border-bottom-none" colspan="4"></td>
+      <td class="border text-center border-bottom-none" colspan="4"></td>
+      <td class="border text-center border-bottom-none" colspan="4"></td>
+    </tr>
+    <tr>
+      <td colspan="4" class="border border-top-none"></td>
+      <td colspan="4" class="border border-top-none"></td>
+      <td colspan="4" class="border border-top-none"></td>
+    </tr>
+    <tr>
+      <td colspan="12"></td>
+    </tr>
+    <tr>
+      <td colspan="3">總經理：</td>
+      <td colspan="3">會計主管：</td>
+      <td colspan="2">會計：</td>
+      <td colspan="2">出納：</td>
+      <td colspan="2">製表：</td>
+      </tr>
+    
+          </table>
+      </div>
+    </div>
+  
+  </body>
+</html>
+<script>
+  // setTimeout(() => {
+  //   window.scrollTo(0, document.body.getElementsByTagName('table')[2].scrollHeight+1800);
+  // }, 500);
+</script>

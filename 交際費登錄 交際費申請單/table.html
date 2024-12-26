@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>交際費登錄 交際費申請單table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["富甲觀光旅行社有限公司"], "company-name");
+  generateInnerHTML(["24"], ["交際費支付申請單"], "table-name");
+  generateInnerHTML(["8",'8','8'], ["部門：高雄會計部",'請款人：石玉琦','請款日期：2023/11/30'], "border", "");
+  generateInnerHTML(["2",'6','8','3','5'], ["項次",'對象','費用項目','金額','簽收欄'], "border", "text-center");
+  generateInnerHTML(["2",'6','8','3','5'], ["１",'屏東縣私立南榮國民中學','交際費用含所有現金支出','2,000','簽收欄'], "border", "");
+  generateInnerHTML(["19",'5'], ["單號：202311240033",''], "border border-bottom-none", "");
+  generateInnerHTML(["19",'5'], ["",''], "border border-top-none", "");
+  generateInnerHTML(["24"], [""], "border", "");
+  generateInnerHTML(["15",'4','5'], ['合計：',"2,000",''], "", "");
+  generateInnerHTML(["24"], ["總經理：　　　　　會計主管：　　　　　會計：　　　　　<span class='text-xs'>出納：　　　　　製單：<span>"], "", "");
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "border", "");
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `;
+    } else {
+      str += `<tr>
+    `;
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    );
+  }, 500);
+</script>

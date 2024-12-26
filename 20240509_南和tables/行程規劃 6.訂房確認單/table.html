@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>行程規劃 6.訂房確認單table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["南和觀光旅行社股份有限公司"], "company-name");
+  generateInnerHTML(["24"], ["訂房確認單"], "table-name");
+  generateInnerHTML(["24"], ["填表日期"], "text-right", "");
+  generateInnerHTML(
+    ["3", "10", "3", "8"],
+    ["飯店名稱", "城市商旅真愛館", "電話", "07-5215116"],
+    "border border-bottom-none",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "10", "3", "8"],
+    ["聯絡人", "訂房組", "傳真", "07-5218714"],
+    "border border-top-none",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "21"],
+    ["住宿日期", "112年11月09日(四)"],
+    "border",
+    "bold",
+  );
+  generateInnerHTML(
+    ["3", "21"],
+    ["團體名稱", "台中市立光復國民中小學"],
+    "border",
+    "",
+  );
+  generateInnerHTML(
+    ["3", "21"],
+    ["當天領隊", "姓名：鄭浩天(小天)　電話：0960-521915"],
+    "border",
+    "",
+  );
+  generateInnerHTML(
+    ["3", "21"],
+    ["間　　數", "學生261位(男生141位/女生120位)、老師12位、領隊14位、司機9人"],
+    "border",
+    "",
+  );
+  generateInnerHTML(
+    ["3-12", "3", "15", "3"],
+    [
+      "分車表",
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    ["Ａ車", "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618", "１０間"],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "１０車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "老師房",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "領隊房",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "15", "3"],
+    [
+      "司機車",
+      "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618",
+      "１０間",
+    ],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(
+    ["3", "18", "3"],
+    ["退房", "3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618", "１０間"],
+    "border",
+    "text-center",
+  );
+  generateInnerHTML(["3", "21"], ["用餐日期", ""], "border", "");
+  generateInnerHTML(["3", "21"], ["款項明細", ""], "border", "");
+  generateInnerHTML(
+    ["12", "12"],
+    ["請確認後蓋章回傳，謝謝您！", "連絡人：林佳薇"],
+    "",
+    "border border-bottom-none text-xl",
+  );
+  generateInnerHTML(
+    ["24"],
+    [
+      "南和觀光旅行社股份有限公司 85120499 電話:04-22418555#207 傳真:04-224275556",
+    ],
+    "",
+    "border border-top-none text-xl",
+  );
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "border", "");
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `;
+    } else {
+      str += `<tr>
+    `;
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight,
+    );
+  }, 500);
+</script>

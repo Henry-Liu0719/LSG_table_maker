@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.車輛安全檢查表</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body></body>
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["12"], ["車輛安全檢查表"], "company-name");
+  generateInnerHTML(["12"], ["檢查日期：___年___月___日"], "text-right");
+  generateInnerHTML(["1",'3','4','4'], ["",'車輛資料','編號1','編號2'], "border text-center");
+  generateInnerHTML(["1-8",'3','4','4'], ["車<br>輛<br>基<br>本<br>資<br>料",'車號','KAB-7869','KAB-7869'], "border text-center");
+  generateInnerHTML(["3",'4','4'], ["出廠年份",'2021年03月','2021年03月'], "border text-center");
+  generateInnerHTML(["3",'4','4'], ["廠牌",'斯堪尼亞','斯堪尼亞'], "border text-center");
+  generateInnerHTML(["3",'4','4'], ["座位數（含駕駛及服務員）",'44位☐與行車執照相符','44位☐與行車執照相符'], "border text-center");
+  generateInnerHTML(["3",'4','4'], ["已行駛里程",'公里','公里'], "border text-right");
+  generateInnerHTML(["3",'4','4'], ["合格定檢紀錄",'下次定檢日期:113年03月22日','下次定檢日期:113年03月22日'], "border text-center");
+  generateInnerHTML(["3",'4','4'], ["強制汽車責任保險",'保險證號碼:140112AR105893<br>有效期限:113年03月17日','保險證號碼:140112AR105893<br>有效期限:113年03月17日'], "border");
+  generateInnerHTML(["3",'4','4'], ["其他附加保險",'強制險200萬','強制險200萬'], "border text-center");generateInnerHTML(["1-7",'3','4','4'], ["車<br>輛<br>安<br>全<br>資<br>料",'安全門','☐可徒手開啟<br>☐標示及使用說明清楚','☐可徒手開啟<br>☐標示及使用說明清楚'], "border");
+  generateInnerHTML(["3",'4','4'], ["安全門通道",'☐無座椅，無蓋板<br>☐保持暢通，無堆放物品','☐無座椅，無蓋板<br>☐保持暢通，無堆放物品'], "border");
+  generateInnerHTML(["3",'4','4'], ["滅火器",'☐至少２具，前後各一具<br>☐有效期限：___年___月___日','☐至少２具，前後各一具<br>☐有效期限：___年___月___日'], "border");
+  generateInnerHTML(["3",'4','4'], ["車窗擊破器",'☐至少３具，位置明顯<br>☐標示清楚，可徒手取用','☐至少３具，位置明顯<br>☐標示清楚，可徒手取用'], "border");
+  generateInnerHTML(["3",'4','4'], ["駕駛室上方最前方座椅",'☐距擋風玻璃７０公分以上<br>☐設有欄杆或保護板','☐距擋風玻璃７０公分以上<br>☐設有欄杆或保護板'], "border");
+  generateInnerHTML(["3",'4','4'], ["行李箱",'☐未設置座椅或臥鋪','☐未設置座椅或臥鋪'], "border");
+  generateInnerHTML(["3",'4','4'], ["輪胎胎紋",'☐未磨損至任一胎面磨耗指示點<br>☐膠皮無脫落','☐未磨損至任一胎面磨耗指示點<br>☐膠皮無脫落'], "border");
+  generateInnerHTML(["12"], ["車輛駕駛人簽章："], "border");
+  generateInnerHTML(["12"], ["得標廠商代表簽章："], "border");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], ["備註:<br />1.本表係由公路總局訂定，相關資訊可參考公路總局網站。<br />2.出車前務請依上表檢查、填具。<br />3.為保障行車安全，檢查發現有不合格情事者，務請將檢查表傳送各地公路監理機關，俾依規定查處。"], "");
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(62, "L", "border");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight,
+    );
+  }, 500);
+</script>

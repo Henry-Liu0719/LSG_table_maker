@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>領隊名單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+  min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+  height: 768px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      /* height: 100%;  */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 2px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="24">
+            南和觀光旅行社股份有限公司
+          </td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="24">領隊名單</td>
+        </tr>
+        <tr>
+          <td class="align-top" colspan="21">製表日期：</td>
+          <td class="align-top" colspan="3">Page 1 of 1</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="24">活動名稱</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="10">團名：</td>
+          <td class="border" colspan="8">出團日期：</td>
+          <td class="border" colspan="2">主導</td>
+          <td class="border" colspan="4">王喬喬</td>
+        </tr>
+        <tr>
+          <td class="border text-center bold" colspan="2">車次</td>
+          <td class="border text-center bold" colspan="2">正職</td>
+          <td class="border text-center bold" colspan="2">姓名</td>
+          <td class="border text-center bold" colspan="2">性別</td>
+          <td class="border text-center bold" colspan="2">台號</td>
+          <td class="border text-center bold" colspan="3">手機</td>
+          <td class="border text-center bold" colspan="2">生日</td>
+          <td class="border text-center bold" colspan="3">身分證號</td>
+          <td class="border text-center bold" colspan="6">地址</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2">王喬喬</td>
+          <td class="border" colspan="2">女</td>
+          <td class="border" colspan="2">喬喬</td>
+          <td class="border" colspan="3">0912345678</td>
+          <td class="border" colspan="2">80/01/01</td>
+          <td class="border" colspan="3">E123456789</td>
+          <td class="border" colspan="6">
+            高雄市大小區一二街123巷4弄5-6號7樓之8
+          </td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-center" colspan="2">☐</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="6"></td>
+        </tr>
+        <tr class="border bold">
+          <td colspan="10"></td>
+          <td colspan="5">合計：</td>
+          <td class="text-right" colspan="3">2,200</td>
+          <td colspan="4"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2" rowspan="3">
+            備<br /><br />註
+          </td>
+          <td class="border border-bottom-none" colspan="22">
+            (1) 請每團字跡工整，人員仔細填寫。核薪部份由【會計部】填寫。
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-top-none border-bottom-none" colspan="22">
+            (2) 此表請於【每團】出團前一天交回【人力派遣部】彙整。
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-top-none" colspan="22">
+            (3) 延遲或沒交回者，請示【上級】裁定發薪時間。
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="align-bottom" colspan="6">會計：</td>
+          <td class="align-bottom" colspan="7">支付主導：</td>
+          <td class="align-bottom" colspan="5">主管：</td>
+          <td class="align-bottom" colspan="6">製表人：</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

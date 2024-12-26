@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>34.訂金支付憑單table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["南和環球旅行社股份有限公司"], "company-name");
+  generateInnerHTML(["24"], ["出團訂金支付申請單"], "table-name");
+  generateInnerHTML(["24"], ["對象：C000903兆品酒店-台中"], "");
+  generateInnerHTML(
+    ["2", "3", "11", "8"],
+    ["部門：", "高雄會計部", "請款人：涂芸茜", "請款日期："],
+    "border",
+  );
+  generateInnerHTML(
+    ["2", "3", "11", "3", "5"],
+    ["項次", "使用日期", "費用項目", "金額", "簽收欄"],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["2", "3", "11", "3", "5-14"],
+    ["1", "112/10/26", "訂金-品臻-家庭四人房", "126,700", ""],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["2", "3", "11", "3"],
+    ["2", "112/10/26", "訂金-老師房", "6,800"],
+    "border text-center",
+  );
+  generateInnerHTML(
+    ["2", "3", "11", "3"],
+    ["3", "112/10/26", "訂金-司領房", "5,500"],
+    "border text-center",
+  );
+  generateInnerHTML(["19"], ["團名：嘉義市私立嘉華高級中學"], "border-left");
+  generateInnerHTML(["19"], ["活動名稱：112學年度嘉華國三校外教學"], "border-left");
+  generateInnerHTML(["19"], ["出團日期：2023/10/25"], "border-left");
+  generateInnerHTML(["19"], ["團　號：202308010750"], "border-left");
+  generateInnerHTML(["19"], ["已付訂金：140,000"], "border-left");
+  generateInnerHTML(["19"], ["銀行名稱："], "border-left");
+  generateInnerHTML(["19"], ["銀行分行："], "border-left");
+  generateInnerHTML(["19"], ["銀行戶名："], "border-left");
+  generateInnerHTML(["19"], ["銀行帳號："], "border-left");
+  generateInnerHTML(["19"], [""], "border-left");
+  generateInnerHTML(["16", "3"], ["應付金額：", "-1,000"], "text-right border-bottom");
+  generateInnerHTML(
+    ["5", "6", "4", "4", "5"],
+    ["總經理：", "會計主管：", "會計：", "出納：", "製單："],
+    "",
+  );
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "border");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight,
+    );
+  }, 500);
+</script>

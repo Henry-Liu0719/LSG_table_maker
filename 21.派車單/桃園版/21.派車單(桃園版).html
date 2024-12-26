@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>派車單(桃園版)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+  min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+  height: 768px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      height: 100%;
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 90%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 2px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="10">富甲旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="10">派車單</td>
+        </tr>
+        <tr>
+          <td colspan="4">出團日期：</td>
+          <td colspan="4">團名：</td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td colspan="4">團號：</td>
+          <td colspan="4">活動名稱：</td>
+          <td colspan="2">總車數：</td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="2">車行</td>
+          <td class="text-center border" colspan="1">司機姓名</td>
+          <td class="text-center border" colspan="1">車號</td>
+          <td class="text-center border" colspan="1">司機台號</td>
+          <td class="text-center border" colspan="2">行動電話</td>
+          <td class="text-center border" colspan="1">座位數</td>
+          <td class="text-center border" colspan="1">備註</td>
+          <td class="text-center border" colspan="1">車次</td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="2"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="1"></td>
+        </tr>
+        <tr>
+          <td colspan="10"></td>
+        </tr>
+        <tr class="border">
+          <td colspan="10">注意事項：</td>
+        </tr>
+        <tr class="border">
+          <td colspan="10">(1)接領時間：</td>
+        </tr>
+        <tr class="border">
+          <td colspan="10">(2)報到時間：</td>
+        </tr>
+        <tr class="border">
+          <td colspan="10">(3)報到地點：</td>
+        </tr>
+        <tr class="border">
+          <td colspan="10">(4)旅遊定點：</td>
+        </tr>
+        <tr class="border">
+          <td class="border" colspan="10" rowspan="11">
+            <label for="contact" style="padding: 0">(5)聯絡事項：</label>
+            <textarea name="notes" id="contact" class="textarea_input"></textarea>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td colspan="10" class="text-xl align-bottom topics">
+            <div class="align-bottom">
+              - 感恩小叮嚀 - 各位 先進 前輩 車行司機大哥們鈞安：
+            </div>
+            <div class="align-bottom d-flex">
+              <div>※</div>
+              <div>
+                <span>麻煩司機請</span>
+                <span class="text-2xl">自行檢查輪胎胎紋</span>
+                <span>是否符合規定。</span>
+              </div>
+            </div>
+            <div class="align-bottom d-flex">
+              <div>※</div>
+              <div>
+                <span>請司機大哥</span>
+                <span class="text-2xl">不要</span>
+                <span>在房間內、遊覽車內及靠車子太近的地方</span>
+                <span class="text-2xl">抽煙</span>
+                <span>，以免煙味飄進車內影響乘客。(若違反學校合約內有罰金需司機自付)</span>
+              </div>
+            </div>
+            <div class="align-bottom d-flex">
+              <div>※</div>
+              <div>
+                <span>請</span>
+                <span class="text-2xl">不要</span>
+                <span>在公共場合</span>
+                <span class="text-2xl">賭博</span>
+                <span>，請</span>
+                <span class="text-2xl"> 保持行車安全距離 </span>
+                <span> ，為維護行車品質。 </span>
+              </div>
+            </div>
+            <div class="align-bottom d-flex">
+              <div>※</div>
+              <div>
+                <span>請</span>
+                <span class="text-2xl">不要</span>
+                <span>在無線電</span>
+                <span class="text-2xl">講髒話</span>
+                <sapn>與對客人有</sapn>
+                <span class="text-2xl">不禮貌不當言論</span>
+                <span>。</span>
+              </div>
+            </div>
+            <div class="align-bottom d-flex">
+              <div>※</div>
+              <div>
+                <span>飯店房間內</span>
+                <span class="text-2xl">禁止吸煙</span>
+                <span>，如違規者飯店索賠損失，由司機大哥們自行負責。</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td colspan="2">總經理：</td>
+          <td colspan="2">會計主管：</td>
+          <td colspan="2">會計：</td>
+          <td colspan="2">出納：</td>
+          <td colspan="2">製單：</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

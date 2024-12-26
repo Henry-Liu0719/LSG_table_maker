@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["收據"], "company-name");
+  generateInnerHTML(["24"], ["茲收到　<span class='bold'>慈惠醫專<span>　退還「護理科校外教學之履約保證金」案，計新台幣0元整。"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["此　　致"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["慈惠醫專"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["廠商名稱：富甲旅行社有限公司"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["統一編號：54828359"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["負責人：翁麗華"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["住址：[80248]高雄市苓雅區海邊路65號4樓之5"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["電話：07-9700983"], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["9",'15'], ["　退還押標保證金保固金　　專用　",''], "border", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], ["註記：本收據請擇定領取方式如下："], "", "text-xs p-0 h-50");
+  generateInnerHTML(["2-4",'2-2','4','10','6-2'], ["選<br><br><br>項",'☐<br>通匯<br>存帳','銀行名稱',"台灣銀行苓雅分行","依據市府財政局 971125高市財五字第0970018052號函規定：「本款項同意採通匯存帳統簽支票方式辦理」准免貼印花稅票"], "border", "h-50");
+  generateInnerHTML(["4",'10'], ["撥款帳戶",'062-001-006-685'], "border", "h-50");
+  generateInnerHTML(['2-2','4','6','4','6'], ["☐<br>領取<br>票據",'票據名稱','','票據號碼',''], "border", "h-50");
+  generateInnerHTML(['4','6','4','6'], ["票據日期",'','票據金額',''], "border", "h-50");
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "", "");
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `;
+    } else {
+      str += `<tr>
+    `;
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight,
+    );
+  }, 500);
+</script>

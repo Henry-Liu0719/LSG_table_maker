@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>約定書table原稿</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style></style>
+</head>
+
+<body></body>
+
+</html>
+<script>
+  // ☐ ◯
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `
+
+  generateInnerHTML(['24'], ['約定書'], '', 'company-name')
+  generateInnerHTML(['24'], ['立約人：南和環球旅行社股份有限公司（以下稱甲方）'], '', '')
+  generateInnerHTML(['24'], ['立約人：林冠宇（以下稱乙方）'], '', '')
+  generateInnerHTML(['24'], ['雙方同意並約定事項如下：'], '', '')
+  generateInnerHTML(['24'], ['<div class="d-flex px-0"><div class="px-0" style="flex:none;">第一條：</div><div class="px-0">甲方同意乙方自112年10月25日至112年10月25日止為甲方從事解說、團務執行工作。</div></div>'], '', '')
+  generateInnerHTML(['24'], ['<div class="d-flex px-0"><div class="px-0" style="flex:none;">第二條：</div><div class="px-0">乙方之權限與權責：依合約之約定為甲方指定 之場所內從事解說、關務執行等工作。</div></div>'], '', '')
+  generateInnerHTML(['24'], ['<div class="d-flex px-0"><div class="px-0" style="flex:none;">第三條：</div><div class="px-0">報酬<br>1.乙方完成每件工作時,甲方應依實際工作量支付 報酬予乙方。其給付方式悉依甲方之規定訂之。<br>2.乙方若無法於甲方約定之時限內完成工作或物品 有缺陷,造成甲方損失時,甲方得自其報酬中扣 抵之。</div></div>'], '', '')
+  generateInnerHTML(['24'], ['立合約書人'], '', '')
+  generateInnerHTML(['24'], ['甲方：南和環球旅行社股份有限公司'], '', '')
+  generateInnerHTML(['24'], ['法定代表人：張靜宜'], '', '')
+  generateInnerHTML(['24'], ['地址：[71742]臺南市仁德區中山路509巷18弄2號11F之2'], '', '')
+  str += `<tr></tr>`
+  generateInnerHTML(['10','14'], ['乙方姓名：林冠宇','簽章：'], '', '')
+  generateInnerHTML(['24'], ['身份證字號：E123438338'], '', '')
+  generateInnerHTML(['24'], ['地址：高雄縣鳥松鄉松埔北巷4-129號'], '', '')
+  str += `<tr></tr>`
+  str += `<tr></tr>`
+  generateInnerHTML(['24'], ['中華民國　　年　　　月　　　日'], '', 'text-center')
+  str += `
+        </table>
+    </div>
+  </div>
+  `
+  console.log([str])
+  document.querySelector('body').innerHTML = str
+  // generateFunctions(24, 'X', '', '')
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `
+    } else {
+      str += `<tr>
+    `
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+          `
+          return
+        }
+        str += `<td colspan="${item}">${text[index]}</td>
+    `
+      })
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `
+          return
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `
+      })
+    }
+    str += `</tr>
+  `
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `
+    }
+    // console.log([str])
+    let div = document.createElement("div")
+    div.innerHTML = str
+    document.body.appendChild(div)
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    )
+  }, 500);
+</script>

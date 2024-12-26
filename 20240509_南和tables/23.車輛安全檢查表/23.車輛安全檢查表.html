@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>23.車輛安全檢查表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+          size: A4 landscape;
+          margin: 0;
+        } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+        min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+        height: 768px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      height: 100%;
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="12">車輛安全檢查表</td>
+        </tr>
+        <tr>
+          <td class="text-right" colspan="12">檢查日期：　　年　　月　　日</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1"></td>
+          <td class="border text-center" colspan="3">車輛資料</td>
+          <td class="border text-center" colspan="4">編號1</td>
+          <td class="border text-center" colspan="4">編號2</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="8">
+            車<br />輛<br />基<br />本<br />資<br />料
+          </td>
+          <td class="border text-center" colspan="3">車號</td>
+          <td class="border text-center" colspan="4">KAB-7869</td>
+          <td class="border text-center" colspan="4">KAB-7869</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">出廠年份</td>
+          <td class="border text-center" colspan="4">2021年03月</td>
+          <td class="border text-center" colspan="4">2021年03月</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">廠牌</td>
+          <td class="border text-center" colspan="4">斯堪尼亞</td>
+          <td class="border text-center" colspan="4">斯堪尼亞</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">
+            座位數（含駕駛及服務員）
+          </td>
+          <td class="border text-center" colspan="4">44位☐與行車執照相符</td>
+          <td class="border text-center" colspan="4">44位☐與行車執照相符</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">已行駛里程</td>
+          <td class="border text-right" colspan="4">公里</td>
+          <td class="border text-right" colspan="4">公里</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">合格定檢紀錄</td>
+          <td class="border text-center" colspan="4">
+            下次定檢日期：113年03月22日
+          </td>
+          <td class="border text-center" colspan="4">
+            下次定檢日期：113年03月22日
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">強制汽車責任保險</td>
+          <td class="border" colspan="4">
+            保險證號碼：140112AR105893<br />有效期限：113年03月17日
+          </td>
+          <td class="border" colspan="4">
+            保險證號碼：140112AR105893<br />有效期限：113年03月17日
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">其他附加保險</td>
+          <td class="border text-center" colspan="4">強制險200萬</td>
+          <td class="border text-center" colspan="4">強制險200萬</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="1" rowspan="7">
+            車<br />輛<br />安<br />全<br />資<br />料
+          </td>
+          <td class="border text-center" colspan="3">安全門</td>
+          <td class="border" colspan="4">
+            ☐可徒手開啟<br />☐標示及使用說明清楚
+          </td>
+          <td class="border" colspan="4">
+            ☐可徒手開啟<br />☐標示及使用說明清楚
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">安全門通道</td>
+          <td class="border" colspan="4">
+            ☐無座椅，無蓋板<br />☐保持暢通，無堆放物品
+          </td>
+          <td class="border" colspan="4">
+            ☐無座椅，無蓋板<br />☐保持暢通，無堆放物品
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">滅火器</td>
+          <td class="border" colspan="4">
+            ☐至少２具，前後各一具<br />☐有效期限：　　年　　月　　日
+          </td>
+          <td class="border" colspan="4">
+            ☐至少２具，前後各一具<br />☐有效期限：　　年　　月　　日
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">車窗擊破器</td>
+          <td class="border" colspan="4">
+            ☐至少３具，位置明顯<br />☐標示清楚，可徒手取用
+          </td>
+          <td class="border" colspan="4">
+            ☐至少３具，位置明顯<br />☐標示清楚，可徒手取用
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">駕駛室上方最前方座椅</td>
+          <td class="border" colspan="4">
+            ☐距擋風玻璃７０公分以上<br />☐設有欄杆或保護板
+          </td>
+          <td class="border" colspan="4">
+            ☐距擋風玻璃７０公分以上<br />☐設有欄杆或保護板
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">行李箱</td>
+          <td class="border" colspan="4">☐未設置座椅或臥鋪</td>
+          <td class="border" colspan="4">☐未設置座椅或臥鋪</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">輪胎胎紋</td>
+          <td class="border" colspan="4">
+            ☐未磨損至任一胎面磨耗指示點<br />☐膠皮無脫落
+          </td>
+          <td class="border" colspan="4">
+            ☐未磨損至任一胎面磨耗指示點<br />☐膠皮無脫落
+          </td>
+        </tr>
+        <tr>
+          <td class="border" colspan="12">車輛駕駛人簽章：</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="12">得標廠商代表簽章：</td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            備註:<br />1.本表係由公路總局訂定，相關資訊可參考公路總局網站。<br />2.出車前務請依上表檢查、填具。<br />3.為保障行車安全，檢查發現有不合格情事者，務請將檢查表傳送各地公路監理機關，俾依規定查處。
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

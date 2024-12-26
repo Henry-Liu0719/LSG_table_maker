@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17.應收帳款對帳收款單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      /* @page {
+          size: A4;
+        } */
+      /* 橫向A4 */
+      @page {
+        size: A4 landscape;
+        margin: 0px;
+      }
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      /* min-width:768px;
+        min-height: 1024px; */
+      /* 橫向A4 */
+      min-width: 1024px;
+      min-height: 768px;
+    }
+
+    .container {
+      /* 直向A4 */
+      /* width:768px;
+        height: 1024px; */
+      /* 橫向A4 */
+      width: 1024px;
+      height: 768px;
+    }
+
+    table {
+      width: 100%;
+      /* height: 100%; */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 20px;
+      /* font-size: 0.75rem; */
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="36">南和國際旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="36">應收帳款對帳收款單</td>
+        </tr>
+        <tr>
+          <td class="text-right" colspan="36" style="font-size: 0.85rem">
+            印表日期：2023/11/17
+          </td>
+        </tr>
+        <tr>
+          <td colspan="33" style="font-size: 0.85rem">
+            收款對象：H0DD353驊邦旅行社股份有限公司　86236716
+          </td>
+          <td class="text-right" colspan="3" style="font-size: 0.85rem">
+            Page 1 of 1
+          </td>
+        </tr>
+        <tr class="border text-xs">
+          <td class="text-center" colspan="2">日期</td>
+          <td class="text-center" colspan="3">訂單號碼</td>
+          <td class="text-center" colspan="3">消費團體</td>
+          <td class="text-center" colspan="2">代訂同業</td>
+          <td class="text-center" colspan="2">消費地點</td>
+          <td class="text-center" colspan="6">商品名稱</td>
+          <td class="text-center" colspan="2">實際數量</td>
+          <td class="text-center" colspan="2">收款數量</td>
+          <td class="text-center" colspan="2">單價</td>
+          <td class="text-center" colspan="2">應收金額</td>
+          <td class="text-center" colspan="2">應退佣金</td>
+          <td class="text-center text-right" colspan="5">備註</td>
+          <td class="text-center" colspan="3">代轉號碼</td>
+        </tr>
+        <tr class="border text-xs">
+          <td colspan="2">112/11/15</td>
+          <td colspan="3">202310030008</td>
+          <td colspan="3">臺北市立志清國民小學</td>
+          <td colspan="2">驊邦旅行</td>
+          <td colspan="2">關西六福</td>
+          <td colspan="6">晚會場地</td>
+          <td colspan="2" class="text-right">1.0</td>
+          <td colspan="2" class="text-right">1.0</td>
+          <td colspan="2" class="text-right">4000.0</td>
+          <td colspan="2" class="text-right">4000.0</td>
+          <td colspan="2" class="text-right">0</td>
+          <td colspan="5"></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr class="border text-xs">
+          <td colspan="2">112/11/15</td>
+          <td colspan="3"></td>
+          <td colspan="3"></td>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+          <td colspan="6">自助式餐點</td>
+          <td colspan="2" class="text-right">140.0</td>
+          <td colspan="2" class="text-right">140.0</td>
+          <td colspan="2" class="text-right">250.0</td>
+          <td colspan="2" class="text-right">35,000</td>
+          <td colspan="2" class="text-right">0</td>
+          <td colspan="5"></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr class="border text-xs">
+          <td colspan="2">112/11/15</td>
+          <td colspan="3"></td>
+          <td colspan="3"></td>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+          <td colspan="6">空床費</td>
+          <td colspan="2" class="text-right">3.0</td>
+          <td colspan="2" class="text-right">3.0</td>
+          <td colspan="2" class="text-right">1000.0</td>
+          <td colspan="2" class="text-right">3,000</td>
+          <td colspan="2" class="text-right">0</td>
+          <td colspan="5"></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr class="border text-xs">
+          <td colspan="2">112/11/15</td>
+          <td colspan="3"></td>
+          <td colspan="3"></td>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+          <td colspan="6">宵夜</td>
+          <td colspan="2" class="text-right">9.0</td>
+          <td colspan="2" class="text-right">9.0</td>
+          <td colspan="2" class="text-right">150.0</td>
+          <td colspan="2" class="text-right">1,350</td>
+          <td colspan="2" class="text-right">0</td>
+          <td colspan="5"></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr class="border text-xs">
+          <td colspan="2">112/11/15</td>
+          <td colspan="3"></td>
+          <td colspan="3"></td>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+          <td colspan="6">司領房</td>
+          <td colspan="2" class="text-right">17.0</td>
+          <td colspan="2" class="text-right">6.0</td>
+          <td colspan="2" class="text-right">1000.0</td>
+          <td colspan="2" class="text-right">6,000</td>
+          <td colspan="2" class="text-right">0</td>
+          <td colspan="5"></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr class="border text-xs">
+          <td colspan="2">112/11/15</td>
+          <td colspan="3"></td>
+          <td colspan="3"></td>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+          <td colspan="6">老師房</td>
+          <td colspan="2" class="text-right">8.0</td>
+          <td colspan="2" class="text-right">3.0</td>
+          <td colspan="2" class="text-right">1000.0</td>
+          <td colspan="2" class="text-right">3,000</td>
+          <td colspan="2" class="text-right">0</td>
+          <td colspan="5"></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr class="border text-xs">
+          <td colspan="2">112/11/15</td>
+          <td colspan="3"></td>
+          <td colspan="3"></td>
+          <td colspan="2"></td>
+          <td colspan="2"></td>
+          <td colspan="6">學生專案</td>
+          <td colspan="2" class="text-right">131.0</td>
+          <td colspan="2" class="text-right">131.0</td>
+          <td colspan="2" class="text-right">1000.0</td>
+          <td colspan="2" class="text-right">131,000</td>
+          <td colspan="2" class="text-right">0</td>
+          <td colspan="5"></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr class="bold">
+          <td colspan="12"></td>
+          <td colspan="8">應收總金額:183,350</td>
+          <td colspan="6">已收:45,000</td>
+          <td colspan="10">未收:138,350</td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td colspan="14"></td>
+          <td colspan="22" class="border-bottom"></td>
+        </tr>
+        <tr class="bold">
+          <td colspan="12" class="text-right">
+            收款對象：驊邦旅行社股份有限公司
+          </td>
+          <td colspan="8">應收總金額:183,350</td>
+          <td colspan="6">已收:45,000</td>
+          <td colspan="10">未收:138,350</td>
+        </tr>
+        <tr>
+          <td colspan="26"></td>
+          <td colspan="10" style="font-size: 1.1rem">
+            請確認無誤後簽名回傳，謝謝!
+          </td>
+        </tr>
+        <tr>
+          <td colspan="36" style="font-size: 1.1rem">
+            戶名：南和國際旅行社有限公司
+          </td>
+        </tr>
+        <tr>
+          <td colspan="26" style="font-size: 1.1rem">
+            銀行：台灣銀行-高雄國際機場分行
+          </td>
+          <td colspan="10" style="font-size: 1.1rem">FAX:07-9729555</td>
+        </tr>
+        <tr>
+          <td colspan="26" style="font-size: 1.1rem">
+            帳號：191-001-000-391
+          </td>
+          <td colspan="10" style="font-size: 1.1rem">連絡電話:07-2515000</td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td colspan="36"></td>
+        </tr>
+        <tr>
+          <td class="text-right" colspan="30">
+            主管：　　　會計：　　　出納：　　　繳款：　　　客戶簽名：
+          </td>
+          <td class="text-right" colspan="6"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

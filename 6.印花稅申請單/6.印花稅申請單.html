@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>印花稅申請單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      /* @page {
+          size: A4;
+        } */
+      /* 橫向A4 */
+      @page {
+        size: A4 landscape;
+      }
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5rem;
+      /* 直向A4 */
+      /* min-width:768px;
+        min-height: 1024px; */
+      /* 橫向A4 */
+      min-width: 848px;
+      min-height: 628px;
+    }
+
+    .container {
+      /* 直向A4 */
+      /* width:768px;
+        height: 1024px; */
+      /* 橫向A4 */
+      width: 848px;
+      height: 628px;
+    }
+
+    table {
+      width: 100%;
+      height: 100%;
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    td {
+      height: 20px;
+      width: 100% / 12;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="12">南和國際旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="12">支付申請單</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="5">部門：高雄OP部</td>
+          <td class="border" colspan="3">請款人：謝宥芯</td>
+          <td class="border" colspan="4">請款日期：2023/11/16</td>
+        </tr>
+        <tr class="topics">
+          <td class="border text-center" colspan="1">項次</td>
+          <td class="border text-center" colspan="4">對象</td>
+          <td class="border text-center" colspan="3">費用項目</td>
+          <td class="border text-center" colspan="2">金額</td>
+          <td class="border text-center" colspan="2">簽收欄</td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="1">1</td>
+          <td class="border" colspan="4">屏東縣東港鎮東興國民小學</td>
+          <td class="text-center border" colspan="3">印花稅</td>
+          <td class="text-right border" colspan="2">349</td>
+          <td class="text-right border" colspan="2" rowspan="4"></td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="4"></td>
+          <td class="text-center border" colspan="3"></td>
+          <td class="text-center border" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="1"></td>
+          <td class="text-center border" colspan="4"></td>
+          <td class="text-center border" colspan="3"></td>
+          <td class="text-center border" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="10" rowspan="1">
+            <textarea name="notes" id="commands" cols="300" rows="6" class="textarea_input">
+  活動名稱：112學年度二年級校外教學
+  出團日期：2023/11/14~2023/11/14
+  團　　號：202310131049
+              </textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-right border-right-none" colspan="8">
+            合計：
+          </td>
+          <td class="border border-left-none border-right-none text-right" colspan="2">
+            349
+          </td>
+          <td class="border border-left-none" colspan="2"></td>
+        </tr>
+        <tr>
+          <td colspan="2">總經理：</td>
+          <td colspan="2">會計主管：</td>
+          <td colspan="2">會計：</td>
+          <td colspan="2">出納：</td>
+          <td colspan="2">製單：謝宥芯</td>
+          <td colspan="2"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

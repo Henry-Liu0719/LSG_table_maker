@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>外調名單、外調領隊(核薪表)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+  min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+  height: 768px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      /* height: 100%;  */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="24">富甲旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="24">領隊名單（核薪表）</td>
+        </tr>
+        <tr>
+          <td class="text-right" colspan="24">Page 1 of 1</td>
+        </tr>
+        <tr>
+          <td colspan="17">單號：202310171080</td>
+          <td colspan="7">製表日期：2023/11/21</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="24">活動名稱：護理科校外教學</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2">團名</td>
+          <td class="border" colspan="10">慈惠醫專</td>
+          <td class="border text-center" colspan="3">出團日期</td>
+          <td class="border text-center" colspan="3">2023/11/15</td>
+          <td class="border text-center" colspan="3">主導</td>
+          <td class="border text-center" colspan="3">謝桂香</td>
+        </tr>
+        <tr class="bold">
+          <td class="border text-center" colspan="2">車次</td>
+          <td class="border text-center" colspan="3">姓名</td>
+          <td class="border text-center" colspan="2">性別</td>
+          <td class="border text-center" colspan="2">台號</td>
+          <td class="border text-center" colspan="3">手機</td>
+          <td class="border text-center" colspan="3">帶團薪資</td>
+          <td class="border text-center" colspan="3">誤餐費</td>
+          <td class="border text-center" colspan="3">副導費</td>
+          <td class="border text-center" colspan="3">簽收</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3">馬玉芳</td>
+          <td class="border text-center" colspan="2">女</td>
+          <td class="border text-center" colspan="2">小馬</td>
+          <td class="border text-center" colspan="3">0986030805</td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3">謝桂香</td>
+          <td class="border text-center" colspan="2">男</td>
+          <td class="border text-center" colspan="2">阿香</td>
+          <td class="border text-center" colspan="3">0988771511</td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="2"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+          <td class="border text-center" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2"></td>
+          <td class="border text-right border-right-none bold" colspan="10">
+            合計：
+          </td>
+          <td class="border border-left-none" colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="2" rowspan="3">備<br /><br /><br />註</td>
+          <td class="border border-bottom-none" colspan="22">
+            （1）請每團字跡工整，人員仔細填寫，核薪部份由【會計部】填寫。
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-bottom-none border-top-none" colspan="22">
+            （2）此表請於【每團】出團前一天交回【人力派遣部】彙整。
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-top-none" colspan="22">
+            （3）延遲或沒交回者，請示【上級】裁定發薪時間。
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5">會計：</td>
+          <td colspan="7">支付主導：</td>
+          <td colspan="6">主管：</td>
+          <td colspan="6">製表人：</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

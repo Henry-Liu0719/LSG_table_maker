@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30.領隊名單table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["南和觀光旅行社股份有限公司"], "company-name");
+  generateInnerHTML(["24"], ["領隊名單"], "table-name");
+  generateInnerHTML(["21",'3'], ["製表日期：",'Page 1 of 1'], "align-top");
+  generateInnerHTML(["24"], ["活動名稱"], "border");
+  generateInnerHTML(["10",'8','2','4'], ["團名：",'出團日期：','主導','王喬喬'], "border");
+  generateInnerHTML(["2",'2','2','2','2','3','2','3','6'], ["車次",'正職','姓名','性別','台號','手機','生日','身分證號','地址'], "border text-center");
+  generateInnerHTML(["2",'2','2','2','2','3','2','3','6'], ["",'☐','王喬喬','女','喬喬','0912345678','80/01/01','E123456789','高雄市大小區一二街123巷4弄5-6號7樓之8'], "border");
+  generateInnerHTML(["2",'2','2','2','2','3','2','3','6'], ["",'☐','','','','','','',''], "border");
+  generateInnerHTML(["10",'5','3','4'], ["",'合計：','2,200',''], "");
+  generateInnerHTML(["2-3",'22'], ["備<br>註",'(1) 請每團字跡工整，人員仔細填寫。核薪部份由【會計部】填寫。'], "border border-bottom-none");
+  generateInnerHTML(["22"], ["(2) 此表請於【每團】出團前一天交回【人力派遣部】彙整。"], "border border-top-none border-bottom-none");
+  generateInnerHTML(["22"], ["(3) 延遲或沒交回者，請示【上級】裁定發薪時間。"], "border border-top-none");
+  generateInnerHTML(["6",'7','5','6'], ["會計：",'支付主導：','主管：','製表人：'], "align-bottom");
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(23, "J", "border");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight,
+    );
+  }, 500);
+</script>

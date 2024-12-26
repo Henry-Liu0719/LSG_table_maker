@@ -1,0 +1,93 @@
+@media print {
+  @page {
+    size: A4;
+  }
+}
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+}
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  min-width:768px;
+  min-height: 1024px;
+}
+.container {
+  min-width:768px;
+  min-height: 1024px;
+  width:768px;
+  height: 1024px;
+}
+table {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+table * {
+  padding: 0.2rem;
+  vertical-align: middle;
+  /* border: 1px solid #000000 ; */
+}
+td {
+  height: 20px;
+  width:100% / 12;
+}
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.table-name {
+  text-align: center;
+  font-size: 1.25rem;
+}
+.row7 > .col1{
+  padding:0.2rem 1rem;
+}
+.textarea_input {
+  width: 95%;
+  overflow-y: hidden;
+  border: none;
+  font-size: 1.2rem;
+}
+.row19 > .border{
+  border-bottom: 3px solid #000000 ;
+}
+
+/* utilities class */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.border {
+  border: 1px solid #000000 ;
+}
+.border-top {
+  border-top: 1px solid #000000 ;
+}
+.border-right {
+  border-right: 1px solid #000000 ;
+}
+.border-bottom {
+  border-bottom: 1px solid #000000 ;
+}
+.border-left {
+  border-left: 1px solid #000000 ;
+}
+.border-top-none {
+  border-top: none ;
+}
+.border-right-none {
+  border-right: none ;
+}
+.border-left-none {
+  border-left: none ;
+}

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐ ◯
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(
+    ["36-6"],
+    ["競專運動有限公司"],
+    "border-bottom",
+    "company-name",
+  );
+  generateInnerHTML([], [""], "", "");
+  generateInnerHTML([], [""], "", "");
+  generateInnerHTML([], [""], "", "");
+  generateInnerHTML([], [""], "", "");
+  generateInnerHTML([], [""], "", "");
+  generateInnerHTML(
+    ["16", "4", "16"],
+    ["報價單", "", "詠糧實業有限公司(54571110)"],
+    "text-14px",
+  );
+  generateInnerHTML(
+    ["16", "4", "16"],
+    ["Quotation # Q20240815001", "", "台南市東山區新東路二段59號"],
+    "text-16px",
+  );
+  generateInnerHTML(
+    ["5", "6", "5", "4", "16"],
+    ["Date:", "SalesPerson:", "ExpiryDate:", "", "吳姐"],
+    "bold text-12px",
+    "",
+  );
+  generateInnerHTML(
+    ["5", "6", "5", "4", "16"],
+    ["2024/08/15", "麥芯瑜", "2024/08/31", "", "Tel : 06 680 3502"],
+    "text-12px",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["項次", "產品編號", "產品名稱", "數量", "單位", "單價", "金額", "備註"],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["1", "GF-1001-2", "低雙槓(350cm)", "1", "座", "71600", "71,600", ""],
+    "text-10px text-center",
+    "border-bottom",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["2", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["3", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["4", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["5", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["6", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["7", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["8", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["9", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["2", "5", "7", "3", "3", "4", "4", "8"],
+    ["10", "", "", "", "", "", "", ""],
+    "text-10px text-center",
+    "",
+  );
+  generateInnerHTML(
+    ["16", "4", "4", "12"],
+    ["Memo", "", "Subotal", "NT$68,020"],
+    "text-left text-12px bold border-top",
+    "",
+  );
+  generateInnerHTML(
+    ["16", "4", "4", "12"],
+    ["", "", "Taxes", "NT$$3,580"],
+    "text-left text-12px bold",
+    "",
+  );
+  generateInnerHTML(
+    ["16", "4", "4", "12"],
+    ["", "", "Total", "NT$71,600"],
+    "text-left text-12px bold",
+    "",
+  );
+  generateInnerHTML([], [""], "", "");
+  generateInnerHTML(
+    ["16", "4", "16"],
+    ["★機密文件,僅供貴公司内部審閱,請勿對外★", "", "Signature"],
+    "text-left text-12px bold",
+    "",
+  );
+  generateInnerHTML(["16", "4", "16"], ["", "", ""], "", "");
+  generateInnerHTML(
+    ["16", "4", "16"],
+    ["競專運動有限公司", "", "詠糧實業有限公司(54571110)"],
+    "border-top text-12px",
+    "text-center",
+  );
+  generateInnerHTML([], [""], "", "");
+  generateInnerHTML(
+    ["36"],
+    ["屏東市北興里北興一街68號1楼 Tel:09896368888"],
+    "text-center text-12px",
+    "border-top border-bottom",
+  );
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, 'X', '', '')
+
+  function generateInnerHTML(
+    colspan = ["12"],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `;
+    } else {
+      str += `<tr>
+    `;
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+          `;
+          return;
+        }
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    );
+  }, 500);
+</script>

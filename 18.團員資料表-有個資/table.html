@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>18.團員資料表-有個資table原稿</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style></style>
+</head>
+
+<body></body>
+
+</html>
+<script>
+  // ☐ ◯
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `
+
+  generateInnerHTML(['36'], ["富甲觀光旅行社有限公司"], "company-name")
+  generateInnerHTML(['36'], ["團員資料表"], "table-name")
+  generateInnerHTML(['27', '9'], ['團　　號： 202301120038 - 112學年度三年級戶外教育活動', '製表人：謝宥芯'], '', '')
+  generateInnerHTML(['27', '9'], ['團體名稱:高雄市立楠梓國民中學', '製表日期：12/11/21'], '', '')
+  generateInnerHTML(['36'], ['行程日：1120913'], '', '')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['序號', '姓名', '出生年月日', '身分證字號', '電話', '性別', '葷素', '備註'], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['1', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['2', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['3', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['4', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['5', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['6', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['7', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['8', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['9', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['10', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['11', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['12', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['13', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['14', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['15', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['16', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['17', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['18', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['19', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['20', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['21', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['22', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['23', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['24', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center')
+  generateInnerHTML(['18', '18'], ['', '總計：24位'], '', 'border')
+
+
+
+  generateInnerHTML(['36'], [''], '', '')
+  str += `
+        </table>
+    </div>
+  </div>
+  `
+  console.log([str])
+  document.querySelector("body").innerHTML = str
+  // generateFunctions(24, "X", "", "")
+  afun()
+  function afun(
+
+
+  ) {
+    let words = ''
+    for (let i = 1; i <= 24; i++) {
+      words += `generateInnerHTML(['3', '5', '5', '5', '5', '2', '2', '9'], ['${i}', '莊曉雨', '100/10/10', 'E123456789', '0987654321', '女', '葷', ''], 'border', 'text-center');`
+      words += `\n`
+    }
+
+
+
+    console.log([words])
+  }
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `
+    } else {
+      str += `<tr>
+    `
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+          `
+          return
+        }
+        str += `<td colspan="${item}">${text[index]}</td>
+    `
+      })
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `
+          return
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `
+      })
+    }
+    str += `</tr>
+  `
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `
+    }
+    // console.log([str])
+    let div = document.createElement("div")
+    div.innerHTML = str
+    document.body.appendChild(div)
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    )
+  }, 500);
+</script>

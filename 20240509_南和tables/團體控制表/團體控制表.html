@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>團體控制表</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+      @page {
+        size: A4;
+      }
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      /* margin-bottom: 5rem; */
+      min-width: 768px;
+      min-height: 1024px;
+    }
+
+    .container {
+      width: 768px;
+      height: 1024px;
+    }
+
+    table {
+      width: 100%;
+      height: 100%;
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    td {
+      height: 20px;
+      width: 100% / 12;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .textarea_input {
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .bg-grey {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="10">富甲旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="10">團體控制表</td>
+        </tr>
+        <tr>
+          <td colspan="10">製表人：</td>
+        </tr>
+        <tr>
+          <td colspan="5">製表日期：</td>
+          <td colspan="5" class="text-right">Page 1 of 1</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="5">團號：</td>
+          <td class="border" colspan="5">團體名稱：</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="10">出團日期：</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="5">活動名稱：</td>
+          <td class="border" colspan="5">業務員：</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="5">聯絡人：</td>
+          <td class="border" colspan="5">OP人員：</td>
+        </tr>
+        <tr>
+          <td class="border border-bottom-none" colspan="3">聯絡電話：</td>
+          <td class="border border-bottom-none" colspan="2">行動電話：</td>
+          <td class="border border-bottom-none" colspan="5">收款方式：</td>
+        </tr>
+        <tr>
+          <td class="border border-top-none" colspan="3"></td>
+          <td class="border border-top-none" colspan="2"></td>
+          <td class="border border-top-none" colspan="5"></td>
+        </tr>
+        <tr>
+          <td class="border bold" colspan="10">OP作業檢查事項：</td>
+        </tr>
+        <tr>
+          <td class="border bold bg-grey text-center" colspan="5">
+            (一)行程定案後一星期
+          </td>
+          <td class="border bold bg-grey text-center" colspan="5">
+            (二)送完同意書二星期內追人數
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">名稱</td>
+          <td class="border text-center" colspan="1">送</td>
+          <td class="border text-center" colspan="1">收</td>
+          <td class="border" colspan="5">人數 - 生： 師：</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">合約簽定</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border bg-grey border-bottom-none text-center bold" colspan="5">
+            出發前二星期內收相關資料作手冊
+          </td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">家長同意書</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border bg-grey border-top-none text-center bold" colspan="5">
+            (詢問老師手冊上是否要學生房號)
+          </td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">保險名單</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border text-center" colspan="3">名稱</td>
+          <td class="border text-center" colspan="2">金額</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">車次</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="3">印花稅</td>
+          <td class="border" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">桌次表</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="3">押標轉履保</td>
+          <td class="border" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">住宿表格</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="3">履保金</td>
+          <td class="border" colspan="2"></td>
+        </tr>
+        <tr>
+          <td class="border bg-grey text-center bold" colspan="5">
+            (三)人數確定後一星期內給
+          </td>
+          <td class="border bg-grey text-center bold" colspan="5">
+            (四)出發前一星期
+          </td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">名稱</td>
+          <td class="border text-center" colspan="1">送</td>
+          <td class="border text-center" colspan="1">收</td>
+          <td class="border" colspan="2">職別證</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">老師人數</td>
+          <td class="border" colspan="1">男：</td>
+          <td class="border" colspan="1">女：</td>
+          <td class="border" colspan="2">貼條</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">學生人數</td>
+          <td class="border" colspan="1">男：</td>
+          <td class="border" colspan="1">女：</td>
+          <td class="border" colspan="2">手冊</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">飯店房號表</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2">座位表</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">手冊表格</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2">車籍資料</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">公函範例</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2">物料</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">總班級數</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2">頭車報到時間</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">車台數</td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2">車輛報到時間</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">餐桌</td>
+          <td class="border" colspan="1">師：</td>
+          <td class="border" colspan="1">生：</td>
+          <td class="border" colspan="2">車輛報到地點</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2">領隊集合時間</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2">團出發時間</td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border bg-grey text-center bold" colspan="5">
+            出發前問業務是否有特殊事項
+          </td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="3"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="10" rowspan="6">
+            <label for="commands">需求內容</label>
+            <textarea name="notes" id="commands" cols="300" rows="5" class="textarea_input"></textarea>
+          </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td colspan="4">總經理：</td>
+          <td colspan="3">業務：</td>
+          <td colspan="3">製單：</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- <script>
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 300
+    )
+  }, 500)
+</script> -->

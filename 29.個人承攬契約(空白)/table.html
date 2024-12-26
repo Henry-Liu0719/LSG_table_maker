@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>28.個人承攬契約table原稿</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style></style>
+</head>
+
+<body></body>
+
+
+</html>
+<script>
+  // `<div class="d-flex px-0"><div class="px-0" style="flex:none;"></div><div class="px-0"></div></div>`
+  // ☐ ◯
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `
+
+  generateInnerHTML(['24'], ['個人承攬契約書'], '', 'company-name')
+  generateInnerHTML(['24'], [''], '', '')
+  generateInnerHTML(['24'], ['甲　　方（定作人）：<span class="underline-offset-1">　　　南和環球旅行社股份有限公司　　　</span>（以下簡稱甲方），'], '', '')
+  generateInnerHTML(['24'], ['乙　　方（承攬人）：<span class="underline-offset-1">　　　林冠宇　　　</span>（以下簡稱乙方），'], '', '')
+  generateInnerHTML(['24'], [''], '', '')
+  generateInnerHTML(['24'], ['茲因乙方承攬甲方<span class="underline-offset-1">　　　領隊及導遊　　　</span>業務，雙方同意訂立本合約書條款如下：'], '', '')
+  generateInnerHTML(['24'], ['第 一 條：工作地點：<span class="underline-offset-1">　　　　　　　　　　　　　　　　　　　　　　</span>'], '', '')
+  generateInnerHTML(['24'], ['第 二 條：承攬範圍：'], '', '')
+  generateInnerHTML(['24'], ['乙方於甲方指定之地點，使用甲方所提供之設備，承攬<span class="underline-offset-1">　　　領隊及導遊　　　</span>業務。'], '', '')
+  generateInnerHTML(['24'], ['第 三 條：付款辦法：'], '', '')
+  generateInnerHTML(['24'], ['乙方承攬甲方業務之報酬,為每次工作結束,統一計算報酬給予乙方。'], '', '')
+  generateInnerHTML(['24'], ['第四條：契約終止：'], '', '')
+  generateInnerHTML(['24'], ['(一)於立合約期間乙方無法順利履行承攬合約上之第一條、第二條之情形。'], '', '')
+  generateInnerHTML(['24'], ['(二)本契約有效期間自中華民國112年10月25日始,這中華民國112年10月27日止。'], '', '')
+  generateInnerHTML(['24'], [`<div class="d-flex p-0"><div class="p-0" style="flex:none;">第五條：</div>
+<div class="p-0">乙方同意提供個資給甲方於聯絡資料表、製作通訊錄及基於承攬所需之運用,並同意甲方閱覽乙方之電腦網路使用紀錄。乙方確實保證於結束承攬契約時不自行留存因業務而蒐集、處理或利用之任何客戶、廠商、人員之檔案資料並依規定確實辦理移轉於甲方。</div></div>`], '', '')
+  generateInnerHTML(['24'], ['第六條：附則：'], '', '')
+  generateInnerHTML(['24'], ['(一)契約成立前,乙方若已承攬甲方之業務,應與本契約具同等效力。'], '', '')
+  generateInnerHTML(['24'], ['(二)其他未訂定事宜,甲乙雙方依一般商業交易慣例及誠信原則為之。'], '', '')
+  generateInnerHTML(['24'], ['(三)本契約經雙方同意,得隨時修訂。'], '', '')
+  generateInnerHTML(['24'], ['(四)本契約如有訴訟之必要,雙方同意以甲方地方法院為第一審管轄法院。'], '', '')
+  generateInnerHTML(['24'], ['本契約乙式壹份,由甲方存照。'], '', '')
+  generateInnerHTML(['24'], ['乙方對上述勞動條件已經充分溝通了解並同意遵守。'], '', '')
+  generateInnerHTML(['24'], ['立契約書人：'], '', '')
+  generateInnerHTML(['12', '12'], ['甲　　方：南和環球旅行社股份有限公司', '乙方簽章：林冠宇'], '', '')
+  generateInnerHTML(['12', '12'], ['代表人簽章：張靜宜', '身份證號碼：E123438338'], '', '')
+  generateInnerHTML(['24'], ['甲方統一編號：83524881'], '', '')
+  generateInnerHTML(['24'], [''], '', '')
+  generateInnerHTML(['24'], ['中　　華　　民　　國　　　　　　　　　　年　　　　　　　　　　月　　　　　　　　　　日'], '', 'text-center')
+  str += `
+        </table>
+    </div>
+  </div>
+  `
+  console.log([str])
+  document.querySelector('body').innerHTML = str
+  // generateFunctions(24, 'X', '', '')
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `
+    } else {
+      str += `<tr>
+    `
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+          `
+          return
+        }
+        str += `<td colspan="${item}">${text[index]}</td>
+    `
+      })
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `
+          return
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `
+      })
+    }
+    str += `</tr>
+  `
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `
+    }
+    // console.log([str])
+    let div = document.createElement("div")
+    div.innerHTML = str
+    document.body.appendChild(div)
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    )
+  }, 500);
+</script>

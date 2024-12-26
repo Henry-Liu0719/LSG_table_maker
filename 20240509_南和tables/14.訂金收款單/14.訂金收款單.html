@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>14.訂金收款單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5rem;
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:848px;
+  min-height: 628px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 848px;
+  height: 628px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height 100% 可以固定欄高，不因內容增減改變 */
+      /* height: 100%; */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="12">富甲旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="12">訂金收款單</td>
+        </tr>
+        <tr class="topics">
+          <td colspan="5">團　　名：慈惠醫專</td>
+          <td colspan="1" class="text-right">團號：</td>
+          <td colspan="3">202310171080</td>
+          <td colspan="3" class="text-right">{印表分頁}</td>
+        </tr>
+        <tr class="topics">
+          <td colspan="6">活動名稱：</td>
+          <td colspan="6" class="text-right">製表日期：2023/11/21</td>
+        </tr>
+        <tr class="topics">
+          <td colspan="8">出團日期：</td>
+          <td colspan="2" class="text-right">業務：林致良</td>
+          <td colspan="2" class="text-right">OP：謝宥芯</td>
+        </tr>
+        <tr class="topics">
+          <td class="border-top border-bottom text-right" colspan="1">
+            項目
+          </td>
+          <td class="border-top border-bottom" colspan="1"></td>
+          <td class="border-top border-bottom text-center" colspan="4">
+            說明
+          </td>
+          <td class="border-top border-bottom" colspan="1">單價</td>
+          <td class="border-top border-bottom" colspan="1">數量</td>
+          <td class="border-top border-bottom" colspan="1"></td>
+          <td class="border-top border-bottom text-center" colspan="1">
+            合計
+          </td>
+          <td class="border-top border-bottom text-center" colspan="2">
+            客戶簽收
+          </td>
+        </tr>
+        <tr>
+          <td class="border-top border-bottom" colspan="2">團費</td>
+          <td class="border-top border-bottom" colspan="3">訂金</td>
+          <td class="border-top border-bottom text-right" colspan="3">
+            1元Ｘ20,000元 =
+          </td>
+          <td class="border-top border-bottom text-right" colspan="2">
+            20,000
+          </td>
+          <td class="border-top border-bottom" colspan="1">元</td>
+          <td class="border-top border-bottom" colspan="1"></td>
+        </tr>
+        <tr>
+          <td class="border-top" colspan="2"></td>
+          <td class="border-top" colspan="3"></td>
+          <td class="border-top text-right" colspan="3">共計：</td>
+          <td class="border-top text-right" colspan="2">60605</td>
+          <td class="border-top" colspan="1">元</td>
+          <td class="border-top" colspan="1"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="3"></td>
+          <td class="text-right" colspan="3">應收餘額：</td>
+          <td class="text-right" colspan="2">60605</td>
+          <td colspan="1">元</td>
+          <td colspan="1"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="2">總經理：</td>
+          <td colspan="2">業務：</td>
+          <td colspan="2">會計：</td>
+          <td colspan="2">出納：</td>
+          <td colspan="2">繳款：</td>
+          <td colspan="2">製單：</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

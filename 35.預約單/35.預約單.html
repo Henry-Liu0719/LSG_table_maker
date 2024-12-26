@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>預約單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+  min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+  height: 768px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      /* height: 100%;  */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="24">
+            南和假期旅行社股份有限公司
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center" colspan="24">統一編號 82836632</td>
+        </tr>
+        <tr>
+          <td class="text-center" colspan="24">園區預約單</td>
+        </tr>
+        <tr>
+          <td colspan="16">團號：202305180</td>
+          <td class="text-right" colspan="8">預約日期：2023/11/27</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">預約地點</td>
+          <td class="border" colspan="21">六福開發(股)公司</td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">電話</td>
+          <td class="border text-center" colspan="6"></td>
+          <td class="border text-center" colspan="3">傳真</td>
+          <td class="border text-center" colspan="4"></td>
+          <td class="border text-center" colspan="4">聯絡人</td>
+          <td class="border text-center" colspan="4"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">消費日期</td>
+          <td class="border text-center" colspan="6"></td>
+          <td class="border text-center" colspan="3">用餐時間</td>
+          <td class="border text-center" colspan="4"></td>
+          <td class="border text-center" colspan="4">餐別</td>
+          <td class="border text-center" colspan="4"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="3">團體名稱</td>
+          <td class="border" colspan="13">高雄市立鹽埕國中</td>
+          <td class="border text-center" colspan="4">預計入園車台數</td>
+          <td class="border text-center" colspan="4"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="16">需求明細</td>
+          <td class="border text-center" colspan="4">領隊人數</td>
+          <td class="border text-center" colspan="4"></td>
+        </tr>
+        <tr style="background-color: #f2f2f2;">
+          <td class="border text-center" colspan="5">產品名稱</td>
+          <td class="border text-center" colspan="11">菜單明細</td>
+          <td class="border text-center" colspan="4">數量</td>
+          <td class="border text-center" colspan="4">單位(桌)</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="5">停車費</td>
+          <td class="border" colspan="11"></td>
+          <td class="border text-center" colspan="4">5</td>
+          <td class="border" colspan="4"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="5">
+            國高中/大專學生團體票(畢旅,戶外教學)
+          </td>
+          <td class="border" colspan="11"></td>
+          <td class="border text-center" colspan="4">168</td>
+          <td class="border" colspan="4"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="5">領隊</td>
+          <td class="border text-center" colspan="19"></td>
+        </tr>
+        <tr>
+          <td class="border text-center" colspan="5" rowspan="4">
+            備註
+          </td>
+          <td class="border align-bottom text-center" colspan="19" rowspan="4"></td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td colspan="5">預約人：黃姵瑩</td>
+          <td class="text-right" colspan="19">請確認後簽章回傳，謝謝。</td>
+        </tr>
+        <tr>
+          <td colspan="24">電話：07-2515000</td>
+        </tr>
+        <tr>
+          <td colspan="24">傳真：07-9729555</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

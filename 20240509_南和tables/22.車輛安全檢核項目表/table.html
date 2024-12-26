@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>table原稿</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body></body>
+
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(['12'], ['車輛安全檢核項目表'], 'company-name');
+  generateInnerHTML(['1-4', '3', '3', '2', '3'], ['車<br>輛<br>基<br>本<br>資<br>料', '車號', '', '出廠年份', '___年___月'],
+    'border text-center');
+  generateInnerHTML(['3', '3', '2', '3'], ['合格定檢紀錄', '☐車輛無逾期檢驗', '下次定檢日期', '___年___月___日'], 'border text-center');
+  generateInnerHTML(['3', '3', '2', '3'], ['強制汽車責任保險證號', '', '有效期限', '___年___月___日'], 'border text-center');
+  generateInnerHTML(['3', '3', '2', '3'], ['乘客責任險證號', '', '有效期限', '___年___月___日'], 'border text-center');
+  generateInnerHTML(['1-3', '3', '3', '2', '3'], ['駕<br>駛<br>人<br>資<br>料', '駕駛人姓名', '', '駕照號碼', ''],
+    'border text-center');
+  generateInnerHTML(['11-2'], ['☐一年內無重大違規或重大肇事紀錄<br>(係指無違反道路交通管理處罰條例相關規定被吊扣駕照紀錄之情事)'], 'border');
+  str += `<tr></tr>`;
+  generateInnerHTML(['1-7','3','8'], ['車<br>輛<br>安<br>全<br>資<br>料','安全門','☐可徒手開啟　　☐標示及使用說明清楚'], 'border text-center');
+  generateInnerHTML(['3','8'], ['安全門通道','☐無座椅、無蓋板　　☐保持暢通，無堆放物品'], 'border text-center');
+  generateInnerHTML(['3','8'], ['滅火器','☐至少２具，前後各一具　　☐有效期限：___年___月___日'], 'border text-center');
+  generateInnerHTML(['3','8'], ['車窗擊破器','☐至少３具，位置明顯　　☐標示清楚，可徒手取用'], 'border text-center');
+  generateInnerHTML(['3','8'], ['駕駛室上方最前方座椅','☐拒擋風玻璃７０公分以上　　☐設有欄杆或保護板'], 'border text-center');
+  generateInnerHTML(['3','8'], ['行李箱','☐未設置座椅或臥鋪'], 'border text-center');
+  generateInnerHTML(['3','8'], ['輪胎胎紋','☐未磨損至任一胎面磨耗指示點　　☐膠皮無脫落'], 'border text-center');
+  generateInnerHTML(['1-11','3','8'], ['車<br>輛<br>安<br>全<br>及<br>輔<br>助<br>系<br>統','底盤(必要項目)','需使用可適性打造遊覽車之底盤所打造之遊覽車'], 'border text-center');
+  generateInnerHTML(['3-2','8-2'], ['車輛裝置<br>先進駕駛輔助系統<br>(至少一種)','☐車道防偏移警示系統LDWS<br>☐車前防撞警示系統FCWS 或 緊急煞車輔助系統AEBS<br>☐疲勞偵測系統DSM'], 'border text-center');
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(['3-2','8-2'], ['車輛裝置<br>行車視野輔助系統<br>(至少一種)','☐合於車輛安全檢測基準規定之行車視野輔助系統<br>☐左右兩側視野鏡頭及可顯示車身兩側影像之車內螢幕<br>☐於車輛右側裝設一個外部近倒視鏡，並於車輛右前側裝設雷達<br>　警示系統<br>☐可顯示車輛四周影像之環景顯示系統'], 'border text-center');
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(['11-2'], ['車輛裝置具有全球衛星定位功能系統設備(GPS)並可提供車輛動態資訊介接至公路主管機關遊覽車動態資訊管理系統。☐有提供☐系統連接☐帳號☐密碼'], 'border');
+  str += `<tr></tr>`;
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['6','6'], ['得標廠商代表簽章','車輛駕駛人於出發當日簽章'], 'border');
+  generateInnerHTML(['6','6'], ['','檢查日期：　年　月　日'], 'border');
+  generateInnerHTML(['12'],
+  ['備註:<br>　1.　本表係依學校辦理校外教學活動租用車輛應行注意事項訂定。<br>　2.　一車一表。出車前務請依本表檢查、填具。<br>　3.　得標廠商原則上於校外教學活動出發前三日，填妥本表各欄位並簽章後提供予學校。<br>　4.　車輛駕駛人於校外教學活動出發前檢查合格後，於本表簽章。<br>　5.　得標廠商所提供之備援車輛及駕駛人亦須填列本表。'],
+  '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(62, "L");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col) {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+        generateInnerHTML(['${col}'], [''], '' );
+        <br> 
+      `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2500,
+    );
+  }, 500);
+</script>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table原稿</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐ ◯
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["8-2","8-2","8"], ["銷貨單","遠望國際有限公司","台南市善化區興華路223巷7號"], "text-center", "");
+  generateInnerHTML(["8"], ["1/1"], "text-right", "");
+  generateInnerHTML(["3","7","3","4","3","4"], ["出貨日期：","2024/08/04","業務：","淑苑","銷貨單號：","202408040001"], "", "");
+  generateInnerHTML(["3","7","3","4","3","4"], ["客戶名稱：","Sara測試88","業務電話：","02-2999999","客户代號：","S888"], "", "");
+  generateInnerHTML(["3","7","3","4","3","4"], ["送貨地址：","台北市","聯絡人：","黃大","結帳方式：","收現"], "", "");
+  generateInnerHTML(["3","7","3","4","3","4"], ["電話：","02-2989999","","","送貨方式：","親送"], "", "");
+  generateInnerHTML(["3","7","3","4","3","4"], ["傳真：","02-2888888","","","",""], "", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["產品編號","產品名稱","件數","單價","數量","單位","重量","總額","備註"], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["E000001","豬梅花火鍋肉片(台灣)","1-0","0.0","1.000","包","1.25","2.0000",""], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["","","","","","","","",""], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["","","","","","","","",""], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["","","","","","","","",""], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["","","","","","","","",""], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["","","","","","","","",""], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["","","","","","","","",""], "border text-center", "");
+  generateInnerHTML(["3","7","2","2","2","2","2","2","2"], ["","","","","","","","",""], "border text-center", "");
+  generateInnerHTML(["14","4","3","3"], ["總件數：","1","小計：","22.0000",], "border text-right", "");
+  generateInnerHTML(["14","4","3","3"], ["總重量：","1.25","營業稅：","1.1000",], "border text-right", "");
+  generateInnerHTML(["3-2","15-2","3-2","3-2"], ["備註","","合計：","23.1000",], "border text-right", "");
+  generateInnerHTML([], [""], "", ""); //插入空的tr
+  generateInnerHTML(["3","2","3","2","3","2","3","2","4"], ["配送人員：","","倉管人員：","","業務主管：","","製表人員：","","客戶簽收："], "", "");
+
+
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML(["24"], [""], "", "");
+  generateInnerHTML([], [""], "", ""); //插入空的tr
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(48, "X", "", "");
+
+  function generateInnerHTML(
+    colspan = ["24"],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `;
+    } else {
+      str += `<tr>
+    `;
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+          `;
+          return;
+        }
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    );
+  }, 500);
+</script>

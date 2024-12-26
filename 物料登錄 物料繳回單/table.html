@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>物料登錄 物料繳回單table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["42"], ["南和假期旅行社股份有限公司"], "company-name");
+  generateInnerHTML(["42"], ["預計領料單"], "table-name");
+  generateInnerHTML(["26",'16'], ["團體名稱：高雄市鳳山區文德國民小學",'單號：202311140002'], "", "");
+  generateInnerHTML(["26",'16'], ["活動名稱：112學年度六年級畢業班戶外教育活動",'印表人：涂芸茜'], "", "");
+  generateInnerHTML(["42"], ["出團日期：2023/11/22"], "", "");
+  generateInnerHTML(["3",'6','8','3','6','3','5','8'], ["項次",'料號','產品名稱','單價','領用數量','單位','小計','備註'], "border", "text-center");
+  generateInnerHTML(["3",'6','8','3','6','3','5','8'], ['１','KA002-014','鋁箔包-波蜜果菜汁/箱24入','145.00','11.0','箱','1595.00',''], "border", "");
+  generateInnerHTML(["29",'13'], ["",'26135.00'], "", "");
+  str += `<tr></tr>`;
+  generateInnerHTML(["42"], ["業務：　　　領料人員：　　　繳回人員：　　　倉管　領料簽收：　　　繳回簽收：　　　"], "", "");
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "border", "");
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `;
+    } else {
+      str += `<tr>
+    `;
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    );
+  }, 500);
+</script>

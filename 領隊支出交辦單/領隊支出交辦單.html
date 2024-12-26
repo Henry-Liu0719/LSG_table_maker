@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>領隊支出交辦單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+      @page {
+        size: A4;
+      }
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5rem;
+      min-width: 768px;
+      min-height: 1024px;
+    }
+
+    .container {
+      min-width: 768px;
+      min-height: 1024px;
+      width: 768px;
+      height: 1024px;
+    }
+
+    table {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 1rem;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    td {
+      height: 20px;
+      width: 100% / 12;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .row7>.col1 {
+      padding: 0.2rem 1rem;
+    }
+
+    .textarea_input {
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    .row19>.border {
+      border-bottom: 3px solid #000000;
+    }
+
+    /* utilities class */
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="12">
+            南和國際旅行社有限公司
+          </td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="12">領隊支出交辦單</td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="7">團號：</td>
+          <td colspan="5">團名：</td>
+        </tr>
+        <tr>
+          <td colspan="7">出團日期：</td>
+          <td colspan="5">活動名稱：</td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="12">
+            <label for="notice">領　隊　結　帳　注　意　事　項</label>
+          </td>
+        </tr>
+        <tr class="row7">
+          <td class="border-left border-right col1" colspan="12">
+            <textarea name="notes" id="notice" cols="300" rows="6" class="textarea_input">
+        1. 向餐廳索取發票，若需加5%稅金則向餐廳索取空白收據2~3張。
+        2. 飯店、門票照估價單單價開立。
+        3. 飯店、餐廳、船票、門票請爭取FOC。
+        4. 各項支出明細需繳品憑證。
+        5. 拿各地點的空白收據回公司。
+              </textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-right-none" colspan="9"></td>
+          <td class="border border-left-none" colspan="3">統編：</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="12">
+            ＊領團人員於出發當日煩請再次確認實際人數、住宿、用餐是否增減。
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="text-center border" colspan="2">預付項目</td>
+          <td class="text-center border" colspan="3">金額</td>
+          <td class="text-center border" colspan="7">備註</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2">油錢</td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="7"></td>
+        </tr>
+        <tr>
+          <td class="border" colspan="2">小費</td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="7"></td>
+        </tr>
+        <tr class="row19">
+          <td class="border" colspan="2">領隊費</td>
+          <td class="border" colspan="3"></td>
+          <td class="border" colspan="7"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="12">總預估金額：　　　元</td>
+        </tr>
+        <tr>
+          <td colspan="5">共計：</td>
+          <td colspan="4">帶現金：</td>
+          <td colspan="3">帶支票：</td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="text-center border-bottom border-top" colspan="3">地點</td>
+          <td class="text-center border-bottom border-top" colspan="3">
+            聯絡電話
+          </td>
+          <td class="text-center border-bottom border-top" colspan="3">聯絡人</td>
+          <td class="text-center border-bottom border-top" colspan="3">地址</td>
+        </tr>
+        <tr>
+          <td class="border-top border-bottom" colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="border-top" colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="text-center border">日期</td>
+          <td class="text-center border">餐別</td>
+          <td class="text-center border">用餐地點</td>
+          <td class="text-center border">用餐名稱</td>
+          <td class="text-center border">價格</td>
+          <td class="text-center border">數量</td>
+          <td class="text-center border">小計</td>
+          <td class="text-center border">預付金額</td>
+          <td class="text-center border">應退佣金</td>
+          <td class="text-center border">結帳方式</td>
+          <td class="text-center border">領隊付款</td>
+          <td class="text-center border">應付餘額</td>
+        </tr>
+        <tr>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="text-center border">日期</td>
+          <td class="text-center border" colspan="2">飯店名稱</td>
+          <td class="text-center border" colspan="2">品項</td>
+          <td class="text-center border">NET價</td>
+          <td class="text-center border" colspan="2">訂金</td>
+          <td class="text-center border">結帳方式</td>
+          <td class="text-center border" colspan="2">應付總額</td>
+          <td class="text-center border">領隊付款</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border text-right" colspan="1">x=</td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="1"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border" colspan="1"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td class="text-center border">日期</td>
+          <td class="text-center border">地點</td>
+          <td class="text-center border" colspan="2">門票名稱</td>
+          <td class="text-center border">價格</td>
+          <td class="text-center border">數量</td>
+          <td class="text-center border">小計</td>
+          <td class="text-center border">預付金額</td>
+          <td class="text-center border">應退佣金</td>
+          <td class="text-center border">結帳方式</td>
+          <td class="text-center border">領隊付款</td>
+          <td class="text-center border">應付餘額</td>
+        </tr>
+        <tr>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+        </tr>
+        <tr>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border" colspan="2"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+          <td class="border"></td>
+        </tr>
+        <tr>
+          <td colspan="12"></td>
+        </tr>
+        <tr>
+          <td colspan="6">主管：</td>
+          <td colspan="6">OP(填表人)：</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

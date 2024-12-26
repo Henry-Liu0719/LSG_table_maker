@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>外調名單、外調領隊(核薪表)table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+
+  <body></body>
+</html>
+<script>
+  // ☐
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["24"], ["富甲旅行社有限公司"], "company-name");
+  generateInnerHTML(["24"], ["領隊名單（核薪表）"], "table-name");
+  generateInnerHTML(["24"], ["Page 1 of 1"], "text-right");
+  generateInnerHTML(["17",'7'], ["單號：202310171080",'製表日期：2023/11/21'], "");
+  generateInnerHTML(["24"], ["活動名稱：護理科校外教學"], "border");
+  generateInnerHTML(["2",'10','3','3','3','3'], ["團名",'慈惠醫專','出團日期','2023/11/15','主導','謝桂香'], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ["車次",'姓名','性別','台號','手機','帶團薪資','誤餐費','副導費','簽收'], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','馬玉芳','女','小馬','0986030805','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','謝桂香','男','阿香','0988771511','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'3','2','2','3','3','3','3','3'], ['','','','','','','','',''], "border text-center");
+  generateInnerHTML(["2",'10','12'], ["",'合計：',''], "border");
+  generateInnerHTML(["2-3",'22'], ["備<br><br>註",'（1）請每團字跡工整，人員仔細填寫，核薪部份由【會計部】填寫。'], "border border-bottom-none");
+  generateInnerHTML(["22"], ["（2）此表請於【每團】出團前一天交回【人力派遣部】彙整。"], "border border-bottom-none border-top-none");
+  generateInnerHTML(["22"], ["（3）延遲或沒交回者，請示【上級】裁定發薪時間。"], "border border-top-none");
+  generateInnerHTML(["5",'7','6','6'], ["會計：",'支付主導：','主管：','製表人：'], "");
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(24, "X", "");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 3000,
+    );
+  }, 500);
+</script>

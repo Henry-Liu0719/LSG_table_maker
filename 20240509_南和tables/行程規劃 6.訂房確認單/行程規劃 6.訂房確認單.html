@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>行程規劃 6.訂房確認單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+  min-height: 768px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+  height: 768px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height: 100% 可固定欄高 */
+      /* height: 100%;  */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 90%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .align-top {
+      vertical-align: top;
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .bg-grey {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="24">
+            南和觀光旅行社股份有限公司
+          </td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="24">訂房確認單</td>
+        </tr>
+        <tr>
+          <td class="text-right" colspan="24">填表日期：112年10月17日</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border border-bottom-none" colspan="3">飯店名稱</td>
+          <td class="border border-bottom-none" colspan="10">
+            城市商旅真愛館
+          </td>
+          <td class="border border-bottom-none" colspan="3">電話</td>
+          <td class="border border-bottom-none" colspan="8">07-5215116</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border border-top-none" colspan="3">聯絡人</td>
+          <td class="border border-top-none" colspan="10">訂房組</td>
+          <td class="border border-top-none" colspan="3">傳真</td>
+          <td class="border border-top-none" colspan="8">07-5218714</td>
+        </tr>
+        <tr class="bold">
+          <td class="border" colspan="3">住宿日期</td>
+          <td class="border" colspan="21">112年11月09日(四)</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">團體名稱</td>
+          <td class="border" colspan="21">台中市立光復國民中小學</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">當天領隊</td>
+          <td class="border" colspan="21">
+            姓名：鄭浩天(小天)　電話：0960-521915
+          </td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">間　　數</td>
+          <td class="border" colspan="21">
+            學生261位(男生141位/女生120位)、老師12位、領隊14位、司機9人
+          </td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3" rowspan="12">分車表</td>
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">Ａ車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">１０車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">老師房</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">領隊房</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">司機車</td>
+          <td class="border text-left" colspan="15">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr class="text-center">
+          <td class="border" colspan="3">退房</td>
+          <td class="border text-left" colspan="18">
+            3246. 244. 242. 240(-1). 608. 610. 229. 228. 227. 618
+          </td>
+          <td class="border" colspan="3">１０間</td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">用餐日期</td>
+          <td class="border" colspan="21">
+            <div class="d-flex">
+              <div>⚫</div>
+              <div>PM21:00 預留老師宵夜檢討會場地，用餐地點:________</div>
+            </div>
+            <div class="d-flex">
+              <div>⚫</div>
+              <div>
+                學生自早AM07:00，用餐地點:________ 學生(葷)259位(素)2位
+              </div>
+            </div>
+            <div class="d-flex">
+              <div>⚫</div>
+              <div>老師+領隊+司機自早AM07:00，用餐地點:________</div>
+            </div>
+            <div class="d-flex">
+              <div style="opacity: 0">⚫</div>
+              <div>老師(葷)10位(素)2位，領隊＊14位，司機＊9位</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="border" colspan="3">款項明細</td>
+          <td class="border" colspan="21">
+            <div class="d-flex">
+              <div>★</div>
+              <div>7/21 已刷訂金62700元，尾款回團確認傳刷</div>
+            </div>
+            <div class="border" style="width: fit-content">
+              請給總領簽人數+間數即可
+            </div>
+          </td>
+        </tr>
+        <tr class="border border-bottom-none text-xl">
+          <td colspan="12">請確認後蓋章回傳，謝謝您！</td>
+          <td colspan="12">連絡人：林佳薇</td>
+        </tr>
+        <tr class="border border-top-none text-xl">
+          <td colspan="24">
+            南和觀光旅行社股份有限公司 85120499 電話:04-22418555#207
+            傳真:04-224275556
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

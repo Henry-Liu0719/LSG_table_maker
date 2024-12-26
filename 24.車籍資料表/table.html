@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.車籍資料表</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body></body>
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["12"], ["車籍資料"], "table-name border");
+  generateInnerHTML(
+    ["3", "3", "3", "3"],
+    ["姓名", "黃鼎纁", "強制卡期限", "113.01.07"],
+    "text-center border",
+  );
+  generateInnerHTML(
+    ["3", "3", "3", "3"],
+    ["司 機 電 話", "0936484721", "出 廠 年 月", "2020.01"],
+    "text-center border",
+  );
+  generateInnerHTML(
+    ["3", "3", "3", "3"],
+    ["車　　牌", "KAB-0668", "指定檢驗日期", "113.01.07"],
+    "text-center border",
+  );
+  generateInnerHTML(
+    ["1-9", "11-9"],
+    ["駕<br><br><br><br><br><br>照", ""],
+    "align-middle border text-center",
+  );
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(
+    ["1-9", "11-9"],
+    ["行<br><br><br><br><br><br>照", ""],
+    "align-middle border text-center",
+  );
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(
+    ["1-8", "5-8", "1-8", "5-8"],
+    ["乘<br><br>客<br><br>險", "", "強<br><br>制<br><br>卡", ""],
+    "align-middle border text-center",
+  );
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  str += `<tr></tr>`;
+  generateInnerHTML(["5", "7"], ["出團日期：", "　　團名："], "");
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(62, "L", "");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 1000,
+    );
+  }, 500);
+</script>

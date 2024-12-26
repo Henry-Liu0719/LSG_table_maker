@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>table原稿</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+          <tr>
+            <td class="company-name" colspan="12">南和國際旅行社有限公司</td>
+          </tr>
+          <tr>
+            <td class="table-name" colspan="12">收款明細表</td>
+          </tr>
+          <tr class="topics">
+            <td colspan="5">團　　名：慈惠醫專</td>
+            <td colspan="1" class="text-right">團號：</td>
+            <td colspan="3">202310171080</td>
+            <td colspan="3">Page 1 of 1</td>
+          </tr>
+          <tr class="topics">
+            <td colspan="9">活動名稱：</td>
+            <td colspan="3">製表日期：2023/11/21</td>
+          </tr>
+          <tr class="topics">
+            <td colspan="9">出團日期：</td>
+            <td colspan="3">製表人：謝宥芯</td>
+          </tr>
+        `
+
+
+  generateInnerHTML(['2','4','2','2','2'], ['項目','說明','單價','數量','合計'], 'border');
+  generateInnerHTML(['2','4','2','2','2'], ['團費','總團費-學生','800元Ｘ','72.0人 =','57,600元'], 'border-top border-bottom');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+  generateInnerHTML(['12'], [''], '');
+
+
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector('body').innerHTML = str
+  generateFunctions(30, 'L');
+
+  function generateInnerHTML(colspan = [12], text = [''], className = '') {
+    str += `<tr>
+    `;
+    if (className == '') {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `
+      })
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes('-')) {
+          let rowspan = item.split('-')[1]
+          item = item.split('-')[0]
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `
+          return
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `
+      })
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col) {
+    col = col.charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      str += `
+        generateInnerHTML(['${col}'], [''], '' );
+        <br> 
+      `
+    }
+    // console.log([str])
+    let div = document.createElement('div')
+    div.innerHTML = str
+    document.body.appendChild(div)
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 3000
+    )
+  }, 500)
+</script>

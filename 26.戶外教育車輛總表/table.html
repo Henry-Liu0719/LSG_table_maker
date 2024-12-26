@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26.戶外教育車輛總表table原稿</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body></body>
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["36"], ["桃園市立大崗國民中學-112學年度八年級學生戶外教育車輛總表 113.01.04-05"], "company-name");
+
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["車數",'車行','車號','出廠年月','指定檢驗','姓名','手機','駕照號碼','駕照有效','強制險','強制險到期','強制險<br>保險證號','乘客責任險','乘客責任險<br>到期','乘客責任險<br>保險證號'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["1",'協億遊覽','KAC-3151','2023.05','113.05.02','黃正輝','0928-217475','J120901724','113.09.10','旺旺友聯','113.05.02','12PB00857488','新光','113.02.01','130012CBP9008881'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["2",'協億遊覽','KAC-3151','2023.05','113.05.02','黃正輝','0928-217475','J120901724','113.09.10','旺旺友聯','113.05.02','12PB00857488','新光','113.02.01','130012CBP9008881'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["3",'協億遊覽','KAC-3151','2023.05','113.05.02','黃正輝','0928-217475','J120901724','113.09.10','旺旺友聯','113.05.02','12PB00857488','新光','113.02.01','130012CBP9008881'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["4",'協億遊覽','KAC-3151','2023.05','113.05.02','黃正輝','0928-217475','J120901724','113.09.10','旺旺友聯','113.05.02','12PB00857488','新光','113.02.01','130012CBP9008881'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["5",'協億遊覽','KAC-3151','2023.05','113.05.02','黃正輝','0928-217475','J120901724','113.09.10','旺旺友聯','113.05.02','12PB00857488','新光','113.02.01','130012CBP9008881'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["6",'協億遊覽','KAC-3151','2023.05','113.05.02','黃正輝','0928-217475','J120901724','113.09.10','旺旺友聯','113.05.02','12PB00857488','新光','113.02.01','130012CBP9008881'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1','1','1','1','1','1'], ["7",'協億遊覽','KAC-3151','2023.05','113.05.02','黃正輝','0928-217475','J120901724','113.09.10','旺旺友聯','113.05.02','12PB00857488','新光','113.02.01','130012CBP9008881'], "");
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(12, "L", "");
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = 24; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 3000,
+    );
+  }, 500);
+</script>

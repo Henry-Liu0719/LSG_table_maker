@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>20.人數確認表table原稿</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style></style>
+</head>
+
+<body></body>
+
+</html>
+<script>
+  // ☐ ◯
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `
+
+  generateInnerHTML(['24'], ['彰化縣立田中高級中學　人數確認表'], '', 'table-name border h-50')
+  generateInnerHTML(['4-2', '9', '2-2', '2-2', '7-2'], ['班級', '應到人數', '實到<br>人數', '未到<br>人數', '未到原因'], 'border', 'text-center bold')
+  generateInnerHTML(['3', '3', '3'], ['男生', '女生', '合計'], 'border', 'text-center bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['901', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['902', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['903', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['904', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['905', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['906', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['907', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['908', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['909', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['909', '14', '8', '22', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['', '', '', '', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '3', '3', '3', '2', '2', '7'], ['合計', '999', '999', '999', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '9', '2', '2', '7'], ['家長', '0', '', '', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['4', '9', '2', '2', '7'], ['老師', '13+1', '', '', '', '', ''], 'border', 'text-center h-50 bold')
+  generateInnerHTML(['24'], ['簽名確認欄'], 'align-bottom', 'border h-50')
+  generateInnerHTML(['12', '12'], ['主辦單位　總領隊', '南和觀光旅行社　總領隊'], 'border', 'text-center')
+  generateInnerHTML(['24-4'], [''], 'border', 'text-center h-50')
+  str += `<tr></tr>`
+  str += `<tr></tr>`
+  str += `<tr></tr>`
+  generateInnerHTML(['3', '9', '3', '9'], ['日期', '', '日期', ''], '', 'text-right border h-50')
+  str += `
+        </table>
+    </div>
+  </div>
+  `
+  console.log([str])
+  document.querySelector('body').innerHTML = str
+  // generateFunctions(24, 'X', 'border', 'text-center')
+
+  function generateInnerHTML(
+    colspan = [12],
+    text = [""],
+    tdClass = "",
+    trClass = "",
+  ) {
+    if (trClass != "") {
+      str += `<tr class="${trClass}">
+    `
+    } else {
+      str += `<tr>
+    `
+    }
+    if (tdClass == "") {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+          `
+          return
+        }
+        str += `<td colspan="${item}">${text[index]}</td>
+    `
+      })
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td class="${tdClass}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `
+          return
+        }
+
+        str += `<td class="${tdClass}" colspan="${item}">${text[index]}</td>
+    `
+      })
+    }
+    str += `</tr>
+  `
+  }
+
+  function generateFunctions(row, col, tdClass = "", trClass = "") {
+    col = col.charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      str += `
+          generateInnerHTML(['${col}'], [''], '${tdClass}', '${trClass}');
+          <br> 
+        `
+    }
+    // console.log([str])
+    let div = document.createElement("div")
+    div.innerHTML = str
+    document.body.appendChild(div)
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 2000,
+    )
+  }, 500);
+</script>

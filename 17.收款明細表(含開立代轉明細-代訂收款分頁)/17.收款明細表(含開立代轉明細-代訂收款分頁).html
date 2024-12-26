@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>收款明細表(含開立代轉明細-代訂收款分頁)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+          size: A4 landscape;
+        } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5rem;
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:848px;
+        min-height: 628px; */
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 848px;
+        height: 628px; */
+    }
+
+    table {
+      width: 100%;
+      /* 取消height 100% 可以固定欄高，不因內容增減改變 */
+      /* height: 100%; */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 30px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr>
+          <td class="company-name" colspan="12">富甲旅行社有限公司</td>
+        </tr>
+        <tr>
+          <td class="table-name" colspan="12">收款明細表(含開立代轉明細)</td>
+        </tr>
+        <tr class="topics">
+          <td colspan="5">團　　名：慈惠醫專</td>
+          <td colspan="1" class="text-right">團號：</td>
+          <td colspan="3">202310171080</td>
+          <td colspan="3">Page 1 of 1</td>
+        </tr>
+        <tr class="topics">
+          <td colspan="9">活動名稱：</td>
+          <td colspan="3">製表日期：2023/11/21</td>
+        </tr>
+        <tr class="topics">
+          <td colspan="9">出團日期：</td>
+          <td colspan="3">製表人：謝宥芯</td>
+        </tr>
+        <tr class="border-top border-bottom">
+          <td class="text-center" colspan="2">項目</td>
+          <td class="text-center" colspan="4">說明</td>
+          <td class="text-center" colspan="2">單價</td>
+          <td colspan="2">數量</td>
+          <td colspan="2">合計</td>
+        </tr>
+        <tr class="border-top border-bottom">
+          <td colspan="2">團費</td>
+          <td colspan="4">總團費-學生</td>
+          <td class="text-right" colspan="2">800元Ｘ</td>
+          <td class="text-right" colspan="1">72.0</td>
+          <td colspan="1">人 =</td>
+          <td class="text-right" colspan="2">57,600元</td>
+        </tr>
+        <tr class="border-top border-bottom">
+          <td colspan="2">團費</td>
+          <td colspan="4">總團費-老師</td>
+          <td class="text-right" colspan="2">540元Ｘ</td>
+          <td class="text-right" colspan="1">6.0</td>
+          <td colspan="1">人 =</td>
+          <td class="text-right" colspan="2">3,240元</td>
+        </tr>
+        <tr class="border-top border-bottom">
+          <td colspan="2">退費</td>
+          <td colspan="4">203潘宥安有海洋卡退門票費</td>
+          <td class="text-right" colspan="2">250元Ｘ</td>
+          <td class="text-right" colspan="1">-1.0</td>
+          <td colspan="1">人 =</td>
+          <td class="text-right" colspan="2">-250元</td>
+        </tr>
+        <tr class="border-top border-bottom">
+          <td colspan="2">退費</td>
+          <td colspan="4">204黃媃女恩病假只收保險費</td>
+          <td class="text-right" colspan="2">15元Ｘ</td>
+          <td class="text-right" colspan="1">1.0</td>
+          <td colspan="1">人 =</td>
+          <td class="text-right" colspan="2">15元</td>
+        </tr>
+        <tr>
+          <td class="text-right" colspan="12">60,605元</td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">抬頭：</td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">統一編號：</td>
+        </tr>
+        <!-- ☐ -->
+        <tr>
+          <td colspan="12" class="bold">
+            聯絡人：　　　　　（　　　處／室）☐主任☐組長☐老師☐小姐
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">
+            地址：[92461]屏東縣南州鄉三民路367號
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">電話：</td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">履保金：☐有（☐學校　☐公司）　☐無</td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">合約書：☐有　☐無</td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">
+            保險：☐有（師：　生：　家長：　眷屬：　）☐無　☐不給保單
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">
+            開立代轉金額：　　　　　　　　　原始憑證: ☐有　☐無
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12" class="bold">
+            備註：
+            <span style="color: blue">項目 + 備註可容納16行</span>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="4">總經理：</td>
+          <td colspan="4">業務：</td>
+          <td colspan="4">製單：</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

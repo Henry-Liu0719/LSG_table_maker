@@ -1,0 +1,177 @@
+@media print {
+  /* 直向A4 */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  /* 橫向A4 */
+  /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+}
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+}
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  /* margin-bottom: 5rem; */
+  /* 直向A4 */
+  min-width:768px;
+  min-height: 1024px;
+  /* 橫向A4 */
+  /* min-width:1024px;
+  min-height: 768px; */
+}
+.wrap + .wrap{
+  margin-top: 5rem;
+  break-before: always;
+}
+.container {
+  /* 直向A4 */
+  width:768px;
+  height: 1024px;
+  /* 橫向A4 */
+  /* width: 1024px;
+  height: 768px; */
+  display: flex;
+  flex-direction: column;
+}
+table {
+  width: 100%;
+  height: fit-content;
+  table-layout: fixed;
+}
+table * {
+  padding: 0.25rem;
+  vertical-align: middle;
+  /* border: 1px solid #000000 ; */
+}
+tr {
+  height: 25px;
+}
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.table-name {
+  text-align: center;
+  font-size: 1.25rem;
+}
+.topics *{
+  padding: 0rem;
+}
+.textarea_input {
+  height: 90%;
+  width: 95%;
+  overflow-y: hidden;
+  border: none;
+  font-size: 1.2rem;
+}
+
+/* utilities class */
+.h-50 {
+  height: 50px;
+}
+.text-xs {
+  font-size: 0.75rem;
+}
+.text-lg {
+  font-size: 1rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+}
+.bold{
+  font-weight: bold;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.border {
+  border: 2px solid #000000 ;
+}
+.border-top-none {
+  border-top: none ;
+}
+.border-right-none {
+  border-right: none ;
+}
+.border-bottom-none {
+  border-bottom: none ;
+}
+.border-left-none {
+  border-left: none ;
+}
+.border-top {
+  border-top: 1px solid #000000 ;
+}
+.border-right {
+  border-right: 1px solid #000000 ;
+}
+.border-bottom {
+  border-bottom: 1px solid #000000 ;
+}
+.border-left {
+  border-left: 1px solid #000000 ;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-top {
+  vertical-align: top;
+}
+.align-bottom {
+  vertical-align: bottom;
+}
+.d-flex {
+  display: flex;
+}
+.bg-grey {
+  background-color: #f0f0f0;
+}
+.page-break {
+    page-break-before: always;
+}
+.p-0 {
+  padding: 0;
+}
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.pl-4 {
+  padding-left: 1rem;
+}
+.underline-offset-1 {
+  text-decoration: underline;
+  text-decoration-color: #000000;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.1rem;
+}
+.number {
+  font-family: 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+}
+.zh {
+  font-family: '標楷體','Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+}
+.indent {
+  text-indent: 2em;
+}

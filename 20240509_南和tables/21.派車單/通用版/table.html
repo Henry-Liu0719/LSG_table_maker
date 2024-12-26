@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.派車單(通用版)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body></body>
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["10"], ["富甲國際旅行社有限公司"], "company-name");
+  generateInnerHTML(["10"], ["派車單"], "table-name");
+  generateInnerHTML(["4",'4','2'], ["出團日期：",'團名：',''], "");
+  generateInnerHTML(["4",'4','2'], ["團號：",'活動名稱：','總車數:'], "");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1'], ["車行",'付款車行','司機姓名','車號','司機台號','聯絡電話','行動電話','座位數','備註','車次'], "text-center border");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1'], ["",'','','','','','','','',''], "text-center border");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1'], ["",'','','','','','','','',''], "text-center border");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1'], ["",'','','','','','','','',''], "text-center border");
+  generateInnerHTML(["1",'1','1','1','1','1','1','1','1','1'], ["",'','','','','','','','',''], "text-center border");
+  generateInnerHTML(["10"], [""], "");
+  generateInnerHTML(["10"], ["注意事項："], "");
+  generateInnerHTML(["10"], ["(1)接領時間："], "");
+  generateInnerHTML(["10"], ["(2)報到時間："], "");
+  generateInnerHTML(["10"], ["(3)報到地點："], "");
+  generateInnerHTML(["10"], ["(4)旅遊定點："], "");
+  generateInnerHTML(["10"], [""], "border");
+  generateInnerHTML(["2",'2','2','2','2'], ["總經理：",'會計主管：','會計：','出網：','製單：'], "");
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(37, "J");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col) {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    for (let i = 1; i <= row; i++) {
+      str += `
+        generateInnerHTML(['${col}'], [''], '' );
+        <br> 
+      `;
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 3000,
+    );
+  }, 500);
+</script>

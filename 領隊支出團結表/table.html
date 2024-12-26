@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>司機佣金支付明細表</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body></body>
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `;
+
+  generateInnerHTML(["12"], ["富甲旅行社有限公司"], "company-name");
+  generateInnerHTML(["12"], ["司機佣金支付明細表"], "table-name");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["6",'6'], ["團名",'團號'], "");
+  generateInnerHTML(["12"], ["活動名稱"], "");
+  generateInnerHTML(["6",'6'], ["出團日期",'列印日期'], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["3",'3','3','3'], ["支付項目",'單價','數量','備註'], "border text-center");
+  generateInnerHTML(["3",'3','3','3'], ["油資",'','',''], "border");
+  generateInnerHTML(["3",'3','3','3'], ["小費",'','',''], "border");
+  generateInnerHTML(["3",'3','3','3'], ["頭車費",'','',''], "border");
+  generateInnerHTML(["3",'3','3','3'], ["",'','',''], "border");
+  generateInnerHTML(["3",'3','3','3'], ["",'','',''], "border");
+  generateInnerHTML(["3",'3','3','3'], ["",'','',''], "border");
+  generateInnerHTML(["3",'3','3','3'], ["",'','',''], "border");
+  generateInnerHTML(["4",'4','4'], ["總金額",'頭車司機簽名','以上金額確認無誤'], "border text-center");
+  generateInnerHTML(["4",'4','4'], ["",'',''], "border text-center");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["3",'3','2','2','2'], ["總經理：",'會計主管：','會計：','出納：','製表：'], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+  generateInnerHTML(["12"], [""], "");
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `;
+  console.log([str]);
+  document.querySelector("body").innerHTML = str;
+  // generateFunctions(22, "L", "");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `;
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `;
+      });
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1];
+          item = item.split("-")[0];
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `;
+          return;
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `;
+      });
+    }
+    str += `</tr>
+  `;
+  }
+
+  function generateFunctions(row, col, className = "") {
+    col = col.charCodeAt(0) - 64; //把英文字母轉成數字
+    let str = "";
+    if (className != "") {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '${className}');
+          <br> 
+        `;
+      }
+    } else {
+      for (let i = 1; i <= row; i++) {
+        str += `
+          generateInnerHTML(['${col}'], [''], '');
+          <br> 
+        `;
+      }
+    }
+    // console.log([str])
+    let div = document.createElement("div");
+    div.innerHTML = str;
+    document.body.appendChild(div);
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 3000,
+    );
+  }, 500);
+</script>

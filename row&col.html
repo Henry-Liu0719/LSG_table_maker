@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    用來產生 .row3>.col1{} .row3>.col2{} .row3>.col3{} .row3>.col4{}
+    .row3>.col5{} .row3>.col6{} .row3>.col7{} .row3>.col8{} .row3>.col9{}
+    .row3>.col10{} .row3>.col11{} .row3>.col12{} ...
+  </body>
+  <script>
+    let row = 31
+    let col = "L".charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      for (let j = 1; j <= col; j++) {
+        str += `.row${i}>.col${j}{}
+      `
+      }
+      str += `
+    `
+    }
+    console.log([str])
+    console.log([`tr*${row}.row$>td*${col}.col$`])
+  </script>
+</html>

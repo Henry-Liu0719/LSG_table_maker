@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>領隊收據 (空白)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      /* 橫向A4 */
+      /* @page {
+    size: A4 landscape;
+    margin: 0;
+  } */
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      min-width: 768px;
+      min-height: 1024px;
+      /* 橫向A4 */
+      /* min-width:1024px;
+  min-height: 768px; */
+    }
+
+    .wrap+.wrap {
+      margin-top: 5rem;
+      break-before: always;
+    }
+
+    .container {
+      /* 直向A4 */
+      width: 768px;
+      height: 1024px;
+      /* 橫向A4 */
+      /* width: 1024px;
+  height: 768px; */
+      display: flex;
+      flex-direction: column;
+    }
+
+    table {
+      width: 100%;
+      height: fit-content;
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.25rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 25px;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 90%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-lg {
+      font-size: 1rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .border {
+      border: 2px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .align-top {
+      vertical-align: top;
+    }
+
+    .align-bottom {
+      vertical-align: bottom;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .bg-grey {
+      background-color: #f0f0f0;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .p-0 {
+      padding: 0;
+    }
+
+    .px-0 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .pl-4 {
+      padding-left: 1rem;
+    }
+
+    .underline-offset-1 {
+      text-decoration: underline;
+      text-decoration-color: #000000;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.1rem;
+    }
+
+    .number {
+      font-family: 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .zh {
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .indent {
+      text-indent: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <div class="d-flex">
+        <table class="border border-right-none">
+          <tr class="company-name">
+            <td colspan="24">領　　　據</td>
+          </tr>
+          <tr>
+            <td colspan="24">茲收到　南和環球旅行社股份有限公司所支付解說之承攬報酬　　　　　　　整,特立此據為憑證。</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="24" style="text-indent: 1rem;">(日期：　　年　月　日~　　年　月　日共　天)</td>
+          </tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr style="height: 8px;"></tr>
+          <tr>
+            <td colspan="10">領款人：　　　</td>
+            <td colspan="14">簽章：</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="24">身份證字號：　　　　　</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="24">生日：　　年　月　日</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="24">電話：　　　　　</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="24">地址：　　　　　　　　</td>
+          </tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="text-center">
+            <td colspan="24">中華民國　　年　　　月　　　日</td>
+          </tr>
+        </table>
+        <table class="border">
+          <tr class="company-name">
+            <td colspan="24">約定書</td>
+          </tr>
+          <tr>
+            <td colspan="24">立約人：<span style="font-size: 0.9rem;">南和環球旅行社股份有限公司</span>（以下稱甲方）</td>
+          </tr>
+          <tr>
+            <td colspan="24">立約人：　　　（以下稱乙方）</td>
+          </tr>
+          <tr>
+            <td colspan="24">雙方同意並約定事項如下：</td>
+          </tr>
+          <tr>
+            <td colspan="24">
+              <div class="d-flex px-0">
+                <div class="px-0" style="flex:none;">第一條：</div>
+                <div class="px-0">甲方同意乙方自　　年　月　日至　　年　月　日止為甲方從事解說、團務執行工作。</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="24">
+              <div class="d-flex px-0">
+                <div class="px-0" style="flex:none;">第二條：</div>
+                <div class="px-0">乙方之權限與權責：依合約之約定為甲方指定之場所內從事解說、關務執行等工作。</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="24">
+              <div class="d-flex px-0">
+                <div class="px-0" style="flex:none;">第三條：</div>
+                <div class="px-0">
+                  報酬<br>1.乙方完成每件工作時，甲方應依實際工作量支付報酬予乙方。其給付方式悉依甲方之規定訂之。<br>2.乙方若無法於甲方約定之時限內完成工作或物品有缺陷，造成甲方損失時，甲方得自其報酬中扣抵之。
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="24">立合約書人</td>
+          </tr>
+          <tr>
+            <td colspan="24">甲方：南和環球旅行社股份有限公司</td>
+          </tr>
+          <tr>
+            <td colspan="24">法定代表人：張靜宜</td>
+          </tr>
+          <tr>
+            <td colspan="24" style="font-size: 0.9rem;">地址：[71742]臺南市仁德區中山路509巷18弄2號11F之2</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="10">乙方姓名：　　　</td>
+            <td colspan="14">簽章：</td>
+          </tr>
+          <tr>
+            <td colspan="24">身份證字號：　　　　　</td>
+          </tr>
+          <tr>
+            <td colspan="24">地址：　　　　　　　　</td>
+          </tr>
+          <tr></tr>
+          <tr></tr>
+          <tr class="text-center">
+            <td colspan="24">中華民國　　年　　　月　　　日</td>
+          </tr>
+        </table>
+      </div>
+      <table>
+        <tr></tr>
+        <tr></tr>
+      </table>
+      <table class="border">
+        <tr class="company-name">
+          <td colspan="24">領團人員切結書</td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td colspan="24">本人　<span class="underline-offset-1">　　　</span>　擔任南和環球旅行社股份有限公司領隊，於執行業務其間自應謹言慎行
+            、嚴守分際，恪遵公司規定。若個人之行為導致違背社會善良風俗或違反中華民國法律之情事，本人願意放棄抗訴權，承擔所有法律追訴；並對影響南和環球旅行社股份有限公司及其客戶之名譽、財產之損害，並依法負擔民事、刑事全數賠償責任。
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td colspan="24">規範條列內容：</td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td colspan="24">第一條： 出團期間嚴禁以非法形式盜攝，偷拍他人，侵犯個人隱私，經查屬實， 依循法律途徑送辦處理。</td>
+        </tr>
+        <tr>
+          <td colspan="24">第二條： 有鑑於電子通訊日漸發達，為維護領團人員及客戶人身財產隱私，出團前中後嚴禁雙方互留各式聯絡通訊方式之資訊資料，例如：Line、FB、IG、推特、手機
+            號碼、SKYPE.....等社群聯絡帳號，違者視情節進行相關處分；情節重大者依循法律途徑送辦處理。</td>
+        </tr>
+        <tr class="text-right">
+          <td colspan="24">謹立此據以茲證明。</td>
+        </tr>
+        <tr>
+          <td colspan="12">立書人簽章：</td>
+          <td colspan="12">聯絡電話：</td>
+        </tr>
+        <tr></tr>
+        <tr class="text-center">
+          <td colspan="24">中華民國　　年　　　月　　　日</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="container">
+      <table>
+        <tr class="company-name">
+          <td colspan="24">個人承攬契約書</td>
+        </tr>
+        <tr>
+          <td colspan="24"></td>
+        </tr>
+        <tr>
+          <td colspan="24">甲　　方（定作人）：<span class="underline-offset-1">　　　南和環球旅行社股份有限公司　　　</span>（以下簡稱甲方），</td>
+        </tr>
+        <tr>
+          <td colspan="24">乙　　方（承攬人）：<span class="underline-offset-1">　　　　　　　　　</span>（以下簡稱乙方），</td>
+        </tr>
+        <tr>
+          <td colspan="24"></td>
+        </tr>
+        <tr>
+          <td colspan="24">茲因乙方承攬甲方<span class="underline-offset-1">　　　　　　　　　　　</span>業務，雙方同意訂立本合約書條款如下：</td>
+        </tr>
+        <tr>
+          <td colspan="24">第 一 條：工作地點：<span class="underline-offset-1">　　　　　　　　　　　　　　　　　　　　　　</span></td>
+        </tr>
+        <tr>
+          <td colspan="24">第 二 條：承攬範圍：</td>
+        </tr>
+        <tr>
+          <td colspan="24">乙方於甲方指定之地點，使用甲方所提供之設備，承攬<span class="underline-offset-1">　　　　　　　　　　　</span>業務。</td>
+        </tr>
+        <tr>
+          <td colspan="24">第 三 條：付款辦法：</td>
+        </tr>
+        <tr>
+          <td colspan="24">乙方承攬甲方業務之報酬，為每次工作結束，統一計算報酬給予乙方。</td>
+        </tr>
+        <tr>
+          <td colspan="24">第四條：契約終止：</td>
+        </tr>
+        <tr>
+          <td colspan="24">(一)於立合約期間乙方無法順利履行承攬合約上之第一條、第二條之情形。</td>
+        </tr>
+        <tr>
+          <td colspan="24">(二)本契約有效期間自中華民國　　　年　　月　　日始，迄中華民國　　　年　　月　　日止。</td>
+        </tr>
+        <tr>
+          <td colspan="24">
+            <div class="d-flex p-0">
+              <div class="p-0" style="flex:none;">第五條：</div>
+              <div class="p-0">
+                乙方同意提供個資給甲方於聯絡資料表、製作通訊錄及基於承攬所需之運用，並同意甲方閱覽乙方之電腦網路使用紀錄。乙方確實保證於結束承攬契約時不自行留存因業務而蒐集、處理或利用之任何客戶、廠商、人員之檔案資料並依規定確實辦理移轉於甲方。
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="24">第六條：附則：</td>
+        </tr>
+        <tr>
+          <td colspan="24">(一)契約成立前，乙方若已承攬甲方之業務，應與本契約具同等效力。</td>
+        </tr>
+        <tr>
+          <td colspan="24">(二)其他未訂定事宜，甲乙雙方依一般商業交易慣例及誠信原則為之。</td>
+        </tr>
+        <tr>
+          <td colspan="24">(三)本契約經雙方同意，得隨時修訂。</td>
+        </tr>
+        <tr>
+          <td colspan="24">(四)本契約如有訴訟之必要，雙方同意以甲方地方法院為第一審管轄法院。</td>
+        </tr>
+        <tr>
+          <td colspan="24">本契約乙式壹份，由甲方存照。</td>
+        </tr>
+        <tr>
+          <td colspan="24">乙方對上述勞動條件已經充分溝通了解並同意遵守。</td>
+        </tr>
+        <tr>
+          <td colspan="24">立契約書人：</td>
+        </tr>
+        <tr>
+          <td colspan="12">甲　　方：南和環球旅行社股份有限公司</td>
+          <td colspan="12">乙方簽章：　　　</td>
+        </tr>
+        <tr>
+          <td colspan="12">代表人簽章：張靜宜</td>
+          <td colspan="12">身份證號碼：　　　　　　</td>
+        </tr>
+        <tr>
+          <td colspan="24">甲方統一編號：83524881</td>
+        </tr>
+        <tr>
+          <td colspan="24"></td>
+        </tr>
+        <tr class="text-center">
+          <td colspan="24">中　　華　　民　　國　　　　　　　　　年　　　　　　　　　月　　　　　　　　　日</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

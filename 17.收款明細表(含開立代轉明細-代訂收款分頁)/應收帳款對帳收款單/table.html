@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>應收帳款對帳收款單</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    @media print {
+
+      /* 直向A4 */
+      /* @page {
+          size: A4;
+        } */
+      /* 橫向A4 */
+      @page {
+        size: A4 landscape;
+        margin: 0px;
+      }
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: '標楷體', 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', sans-serif;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      /* margin-bottom: 5rem; */
+      /* 直向A4 */
+      /* min-width:768px;
+        min-height: 1024px; */
+      /* 橫向A4 */
+      min-width: 1024px;
+      min-height: 768px;
+    }
+
+    .container {
+      /* 直向A4 */
+      /* width:768px;
+        height: 1024px; */
+      /* 橫向A4 */
+      width: 1024px;
+      height: 768px;
+    }
+
+    table {
+      width: 100%;
+      /* height: 100%; */
+      table-layout: fixed;
+    }
+
+    table * {
+      padding: 0.2rem;
+      vertical-align: middle;
+      /* border: 1px solid #000000 ; */
+    }
+
+    tr {
+      height: 20px;
+      font-size: 0.75rem;
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-name {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    .topics * {
+      padding: 0rem;
+    }
+
+    .textarea_input {
+      height: 95%;
+      width: 95%;
+      overflow-y: hidden;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    /* utilities class */
+    .h-50 {
+      height: 50px;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .border {
+      border: 1px solid #000000;
+    }
+
+    .border-top-none {
+      border-top: none;
+    }
+
+    .border-right-none {
+      border-right: none;
+    }
+
+    .border-bottom-none {
+      border-bottom: none;
+    }
+
+    .border-left-none {
+      border-left: none;
+    }
+
+    .border-top {
+      border-top: 1px solid #000000;
+    }
+
+    .border-right {
+      border-right: 1px solid #000000;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid #000000;
+    }
+
+    .border-left {
+      border-left: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body></body>
+
+</html>
+<script>
+  var str = `
+  <div class="wrap">
+    <div class="container">
+      <table>
+        `
+
+  generateInnerHTML(["36"], ["南和國際旅行社有限公司"], "company-name")
+  generateInnerHTML(["36"], ["應收帳款對帳收款單"], "table-name")
+  generateInnerHTML(["36"], ["印表日期：2023/11/17"], "text-right")
+  generateInnerHTML(["33", '3'], ["收款對象：H0DD353驊邦旅行社股份有限公司　86236716", 'Page 1 of 1'], "border")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["日期", '訂單號碼', '消費團體', '代訂同業', '消費地點', '商品名稱', '實際數量', '收款數量', '單價', '應收金額', '應退佣金', '備註', '代轉號碼'], "text-center")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["112/11/15", '202310030008', '臺北市立志清國民小學', '驊邦旅行', '關西六福', '晚會場地', '1.0', '1.0', '4000.0', '4000.0', '0', '', ''], "")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["112/11/15", '', '', '', '', '自助式餐點', '140.0', '140.0', '250.0', '35,000', '0', '', ''], "")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["112/11/15", '', '', '', '', '空床費', '3.0', '3.0', '1000.0', '3,000', '0', '', ''], "")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["112/11/15", '', '', '', '', '宵夜', '9.0', '9.0', '150.0', '1,350', '0', '', ''], "")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["112/11/15", '', '', '', '', '司領房', '17.0', '6.0', '1000.0', '6,000', '0', '', ''], "")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["112/11/15", '', '', '', '', '老師房', '8.0', '3.0', '1000.0', '3,000', '0', '', ''], "")
+  generateInnerHTML(["2", '3', '3', '2', '2', '6', '2', '2', '2', '2', '2', '5', '3'], ["112/11/15", '', '', '', '', '學生專案', '131.0', '131.0', '1000.0', '131,000', '0', '', ''], "")
+  generateInnerHTML(["13", '8', '6', '9'], ["", '應收總金額:183,3350', '已收:45,000', '未收:138,350'], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["13", '8', '6', '9'], ["收款對象：H0DD353驊邦旅行社股份有限公司", '應收總金額:183,3350', '已收:45,000', '未收:138,350'], "")
+  generateInnerHTML(["36"], ["請確認無誤後簽名回傳，謝謝!"], "text-right")
+  generateInnerHTML(["36"], ["戶名：南和國際旅行社有限公司"], "")
+  generateInnerHTML(["27", '9'], ["銀行：台灣銀行－國際機場分行", 'FAX:07-9729555'], "")
+  generateInnerHTML(["27", '9'], ["帳號：191-001-000-391", '連絡電話:07-2515000'], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["36"], [""], "")
+  generateInnerHTML(["30", '6'], ["主管：　　　會計：　　　出納：　　　繳款：　　　客戶簽名：", ''], "text-right")
+
+  str += `
+        </table>
+    </div>
+  </div>
+  `
+  console.log([str])
+  document.querySelector("body").innerHTML = str
+  // generateFunctions(30, "L");
+
+  function generateInnerHTML(colspan = [12], text = [""], className = "") {
+    str += `<tr>
+    `
+    if (className == "") {
+      colspan.forEach((item, index) => {
+        str += `<td colspan="${item}">${text[index]}</td>
+    `
+      })
+    } else {
+      colspan.forEach((item, index) => {
+        //檢查item包含'-',則td要加rowspan
+        if (item.includes("-")) {
+          let rowspan = item.split("-")[1]
+          item = item.split("-")[0]
+          str += `<td class="${className}" colspan="${item}" rowspan="${rowspan}">${text[index]}</td>
+    `
+          return
+        }
+
+        str += `<td class="${className}" colspan="${item}">${text[index]}</td>
+    `
+      })
+    }
+    str += `</tr>
+  `
+  }
+
+  function generateFunctions(row, col) {
+    col = col.charCodeAt(0) - 64 //把英文字母轉成數字
+    let str = ""
+    for (let i = 1; i <= row; i++) {
+      str += `
+        generateInnerHTML(['${24}'], [''], '' );
+        <br> 
+      `
+    }
+    // console.log([str])
+    let div = document.createElement("div")
+    div.innerHTML = str
+    document.body.appendChild(div)
+    // document.querySelector('.div1').innerHTML = str
+  }
+  setTimeout(() => {
+    window.scrollTo(
+      0,
+      document.body.getElementsByTagName("table")[0].scrollHeight - 3000,
+    )
+  }, 500);
+</script>
